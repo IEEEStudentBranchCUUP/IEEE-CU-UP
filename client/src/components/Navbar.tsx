@@ -11,6 +11,7 @@ const navItems = [
   { label: "Members", href: "/members" },
   { label: "Team", href: "/team" },
   { label: "Contact", href: "/contact" },
+  { label: "Gallery", href: "/gallery" },
 ];
 
 export function Navbar() {
@@ -25,25 +26,25 @@ export function Navbar() {
   return (
     <header className="top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container-custom flex h-16 items-center justify-between">
-        
+
         {/* Combined Logos Section */}
         <Link href="/" className="flex items-center space-x-4">
-          
+
           {/* CU Logo */}
           <div className="flex items-center">
-            <img 
-              src="/images/team/Screenshot 2025-09-23 142329.png" 
-              alt="CU Logo" 
-              className="h-10 w-auto" 
+            <img
+              src="/images/team/Screenshot 2025-09-23 142329.png"
+              alt="CU Logo"
+              className="h-10 w-auto"
             />
           </div>
 
           {/* IEEE Logo */}
           <div className="flex items-center">
-            <img 
-              src="https://pub-141831e61e69445289222976a15b6fb3.r2.dev/Image_to_url_V2/IEEE-CU-Logo-Official-imagetourl.cloud-1768544558737-myd2ju.jpg" 
-              alt="IEEE Logo" 
-              className="h-14 w-auto" 
+            <img
+              src="https://pub-141831e61e69445289222976a15b6fb3.r2.dev/Image_to_url_V2/IEEE-CU-Logo-Official-imagetourl.cloud-1768544558737-myd2ju.jpg"
+              alt="IEEE Logo"
+              className="h-14 w-auto"
             />
           </div>
 
