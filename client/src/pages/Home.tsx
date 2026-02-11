@@ -466,7 +466,7 @@ export default function Home() {
                   <span className="inline-block py-2 px-4 rounded-full bg-blue-100 text-primary text-sm font-semibold mb-6 border border-primary/20">
                     Where Students Build the Future with AI
                   </span>
-                 <div className="text-center mb-6">
+<div className="text-center mb-6">
   <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight font-heading">
     <span className="text-[#00629B]">IEEE</span> Student Branch
   </h1>
@@ -474,8 +474,8 @@ export default function Home() {
     <span className="text-red-500">Chandigarh</span>
     <span className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight font-heading"> University</span>
   </h2>
-  <p className="text-gray-600 text-2xl md:text-3xl mt-3 font-heading">
-    Uttar Pradesh, India
+  <p className="text-3xl md:text-4xl mt-4 font-heading text-black font-medium">
+    Uttar Pradesh
   </p>
 </div>
                   <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
