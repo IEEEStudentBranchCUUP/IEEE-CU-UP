@@ -19,7 +19,7 @@ export function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <header className="top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="w-full px-0 md:px-4 lg:px-6 flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center">
           <div className="flex items-center">
