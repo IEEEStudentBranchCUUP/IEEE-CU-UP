@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Loader2, Linkedin, Twitter, Mail, Award, Users, Settings, BookOpen, Mic, DollarSign, Camera, TrendingUp, Cpu, Globe, PenTool, Video } from "lucide-react";
+import { Loader2, Linkedin, Twitter, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 
 // Team member interface
@@ -11,8 +11,9 @@ interface TeamMember {
   department?: string;
   email: string;
   imageUrl: string;
-  category: "faculty" | "core" | "tech" | "media" | "events" | "anchor";
+  category: "faculty" | "core" | "tech" | "media" | "events" | "anchor" | "marketing";
   bio?: string;
+  linkedin?: string;
   socialLinks?: {
     linkedin?: string;
     twitter?: string;
@@ -31,16 +32,18 @@ export default function Team() {
       role: "HOD",
       department: "School of Computer Science and Engineering",
       email: "rkumar@ieee-cu.edu",
-      imageUrl: "/images/team/sir1.jpeg",
+      linkedin: "https://linkedin.com/in/ajay-kumar-singh",
+      imageUrl: "/images/team/sir1.png",
       category: "faculty",
     },
     {
       id: 2,
       name: "Dr. Vikash Kumar Mishra",
-      role: "Branch Counsellor, IEEE Student Branch ",
+      role: "Branch Counsellor, IEEE Student Branch",
       department: "School of Computer Science and Engineering",
       email: "priya.sharma@ieee-cu.edu",
-      imageUrl: "/images/team/sir3.png",
+      linkedin: "https://linkedin.com/in/vikash-mishra",
+      imageUrl: "/images/team/sir2.png",
       category: "faculty",
     },
     {
@@ -49,10 +52,10 @@ export default function Team() {
       role: "Faculty Advisor",
       department: "School of Computer Science and Engineering",
       email: "priya.sharma@ieee-cu.edu",
-      imageUrl: "/images/team/sir2.png",
+      linkedin: "https://linkedin.com/in/amit-mishra",
+      imageUrl: "/images/team/sir3.png",
       category: "faculty",
     },
-    
     
     // Core Committee
     {
@@ -61,6 +64,7 @@ export default function Team() {
       role: "Chairperson",
       department: "M.Tech. CSE - AI/ML",
       email: "25LMCS10042@culkomail.in",
+      linkedin: "https://linkedin.com/in/raaj-shekhar",
       imageUrl: "/images/team/chairperson.png",
       category: "core",
       bio: "Leading IEEE CU towards technological excellence",
@@ -71,6 +75,7 @@ export default function Team() {
       role: "Vice Chairperson",
       department: "B.Tech. CSE - Core",
       email: "25LBCS1294@culkomail.in",
+      linkedin: "https://linkedin.com/in/ayan-khan",
       imageUrl: "/images/team/vice-chair.jpg",
       category: "core",
       bio: "Driven by innovation and student-led initiatives",
@@ -81,6 +86,7 @@ export default function Team() {
       role: "Secretary",
       department: "B.Tech. CSE - Core",
       email: "25LBCS1012@culkomail.in",
+      linkedin: "https://linkedin.com/in/jayant-singh",
       imageUrl: "/images/team/secretary.jpg",
       category: "core",
       bio: "Team coordination and event management",
@@ -91,6 +97,7 @@ export default function Team() {
       role: "Treasurer",
       department: "M.Tech. CSE - AI/ML",
       email: "25LMCS1005@culkomai.in",
+      linkedin: "https://linkedin.com/in/suryansh-gupta",
       imageUrl: "/images/team/treasurer.png",
       category: "core",
       bio: "Financial management and budgeting",
@@ -103,6 +110,7 @@ export default function Team() {
       role: "Technical Lead",
       department: "M.Tech. CSE - AI/ML",
       email: "25LMCS1001@culkomail.in",
+      linkedin: "https://linkedin.com/in/sarfaraj-khan",
       imageUrl: "/images/team/tech-lead.jpg",
       category: "tech",
       bio: "Tech Lead managing technical direction and team coordination.",
@@ -113,6 +121,7 @@ export default function Team() {
       role: "Technical Member",
       department: "BCA (Hons.)",
       email: "25LBBC1048@culkomail.in",
+      linkedin: "https://linkedin.com/in/shashank-pandey",
       imageUrl: "/images/team/tech1.jpeg",
       category: "tech",
       bio: "Developer building and managing IEEE website and mobile app.",
@@ -123,6 +132,7 @@ export default function Team() {
       role: "Technical Member",
       department: "B.Tech. IT",
       email: "25LBIT1024@culkomail.in",
+      linkedin: "https://linkedin.com/in/akshara-bajpai",
       imageUrl: "/images/team/tech2.jpg",
       category: "tech",
       bio: "Technical support assisting in development.",
@@ -133,6 +143,7 @@ export default function Team() {
       role: "Technical Member",
       department: "B.Tech. IT",
       email: "25LBIT1022@culkomail.in",
+      linkedin: "https://linkedin.com/in/mayank-gautam",
       imageUrl: "/images/team/tech3.jpg",
       category: "tech",
       bio: "Technical executive supporting development.",  
@@ -143,76 +154,197 @@ export default function Team() {
       role: "Technical Member",
       department: "B.Tech. CSE - Core",
       email: "25LBCS1261@culkomail.in",
+      linkedin: "https://linkedin.com/in/sampoorn-tripathi",
       imageUrl: "/images/team/tech4.jpg",
       category: "tech", 
       bio: "Technical team member contributing to system support.",   
     },
+    
+    // Marketing Team (NEW)
     {
-      id: 17,
-      name: "Deepanjali Srivastava",
-      role: "Technical Member",
-      department: "B.Tech. CSE - Core",
-      email: "25LBCS1291@culkomail.in",
-      imageUrl: "/images/team/tech5.jpg",
-      category: "tech", 
-      bio: "Technical team member contributing to system support.",   
+      id: 23,
+      name: "Ishan Yadav",
+      role: "Marketing Lead",
+      department: "",
+      email: "ishan.yadav@culkomail.in",
+      linkedin: "https://linkedin.com/in/ishan-yadav",
+      imageUrl: "/images/team/marketing1.jpg",
+      category: "marketing",
+    },
+    {
+      id: 24,
+      name: "Aaradhya Gupta",
+      role: "Marketing Lead",
+      department: "",
+      email: "aaradhya.gupta@culkomail.in",
+      linkedin: "https://linkedin.com/in/aaradhya-gupta",
+      imageUrl: "/images/team/marketing2.jpg",
+      category: "marketing",
+    },
+    {
+      id: 25,
+      name: "Abhedya Pratap Singh",
+      role: "Publicity",
+      department: "",
+      email: "abhedya.singh@culkomail.in",
+      linkedin: "https://linkedin.com/in/abhedya-singh",
+      imageUrl: "/images/team/marketing3.jpg",
+      category: "marketing",
+    },
+    {
+      id: 26,
+      name: "Rohit Kumawat",
+      role: "Membership",
+      department: "",
+      email: "rohit.kumawat@culkomail.in",
+      linkedin: "https://linkedin.com/in/rohit-kumawat",
+      imageUrl: "/images/team/marketing4.jpg",
+      category: "marketing",
     },
     
-    // Media Team
+    // Media Team (UPDATED as per your list)
     {
-      id: 16,
-      name: "Mohd Humza",
-      role: "Social Media Manager",
-      department: "B.Tech. CSE - Core",
-      email: "25LBCS1305@culkomail.in",
-      imageUrl: "/images/team/media1.jpg",
-      category: "media",
-    },
-    {
-      id: 17,
-      name: "Paras Tiwari",
-      role: "Content Writer",
-      department: "B.Tech. CSE - Core",
-      email: "kabir.choudhary@ieee-cu.edu",
-      imageUrl: "/images/team/media2.jpg",
-      category: "media",
-    },
-    {
-      id: 18,
-      name: "Naitik Srivastava",
-      role: "Photographer",
-      department: "B.Tech. CSE - Core",
-      email: "neha.sharma@ieee-cu.edu",
-      imageUrl: "/images/team/media3.jpg",
-      category: "media",
-    },
-    
-    // Anchoring Team
-    {
-      id: 21,
-      name: "Kanika Singh",
-      role: "Anchor",
-      department: "B.Tech. CSE - Core",
-      email: "dhruv.saxena@ieee-cu.edu",
-      imageUrl: "/images/team/achor1.jpg",
-      category: "anchor",
-    },
-    {
-      id: 21,
+      id: 27,
       name: "Aadya Gupta",
-      role: "Anchor",
-      department: "B.Tech. CSE - Core",
-      email: "dhruv.saxena@ieee-cu.edu",
-      imageUrl: "/images/team/achor2.jpg",
+      role: "Media Lead",
+      department: "",
+      email: "aadya.gupta@culkomail.in",
+      linkedin: "https://linkedin.com/in/aadya-gupta",
+      imageUrl: "/images/team/media-lead.jpg",
+      category: "media",
+    },
+    {
+      id: 28,
+      name: "Kushagra Srivastava",
+      role: "Social Media Handler",
+      department: "",
+      email: "kushagra.srivastava@culkomail.in",
+      linkedin: "https://linkedin.com/in/kushagra-srivastava",
+      imageUrl: "/images/team/social-media.jpg",
+      category: "media",
+    },
+    {
+      id: 29,
+      name: "Abhinav Gupta",
+      role: "Photographer",
+      department: "",
+      email: "abhinav.gupta@culkomail.in",
+      linkedin: "https://linkedin.com/in/abhinav-gupta",
+      imageUrl: "/images/team/photographer.jpg",
+      category: "media",
+    },
+    {
+      id: 30,
+      name: "Ayush Pratap Singh",
+      role: "Editor",
+      department: "",
+      email: "ayush.singh@culkomail.in",
+      linkedin: "https://linkedin.com/in/ayush-singh",
+      imageUrl: "/images/team/editor.jpg",
+      category: "media",
+    },
+    {
+      id: 31,
+      name: "Naitik Srivastava",
+      role: "Design",
+      department: "",
+      email: "naitik.srivastava@culkomail.in",
+      linkedin: "https://linkedin.com/in/naitik-srivastava",
+      imageUrl: "/images/team/design.jpg",
+      category: "media",
+    },
+    
+    // Events Team (UPDATED as per your list)
+    {
+      id: 32,
+      name: "Mohd. Humza",
+      role: "Event Lead",
+      department: "",
+      email: "mohd.humza@culkomail.in",
+      linkedin: "https://linkedin.com/in/mohd-humza",
+      imageUrl: "/images/team/event-lead.jpg",
+      category: "events",
+    },
+    {
+      id: 33,
+      name: "Paras Tiwari",
+      role: "Event Team Member",
+      department: "",
+      email: "paras.tiwari@culkomail.in",
+      linkedin: "https://linkedin.com/in/paras-tiwari",
+      imageUrl: "/images/team/event1.jpg",
+      category: "events",
+    },
+    {
+      id: 34,
+      name: "Animesh Mishra",
+      role: "Event Team Member",
+      department: "",
+      email: "animesh.mishra@culkomail.in",
+      linkedin: "https://linkedin.com/in/animesh-mishra",
+      imageUrl: "/images/team/event2.jpg",
+      category: "events",
+    },
+    {
+      id: 35,
+      name: "Abhedya Pratap Singh",
+      role: "Event Team Member",
+      department: "",
+      email: "abhedya.singh@culkomail.in",
+      linkedin: "https://linkedin.com/in/abhedya-singh",
+      imageUrl: "/images/team/event3.jpg",
+      category: "events",
+    },
+    {
+      id: 36,
+      name: "Ansh Pratap Verma",
+      role: "Event Team Member",
+      department: "",
+      email: "ansh.verma@culkomail.in",
+      linkedin: "https://linkedin.com/in/ansh-verma",
+      imageUrl: "/images/team/event4.jpg",
+      category: "events",
+    },
+    {
+      id: 37,
+      name: "Anubhav Singh",
+      role: "Event Team Member",
+      department: "",
+      email: "anubhav.singh@culkomail.in",
+      linkedin: "https://linkedin.com/in/anubhav-singh",
+      imageUrl: "/images/team/event5.jpg",
+      category: "events",
+    },
+    
+    // Anchoring Team (UPDATED as per your list)
+    {
+      id: 38,
+      name: "Kanika Singh",
+      role: "Spokesperson / Anchoring Lead",
+      department: "",
+      email: "kanika.singh@culkomail.in",
+      linkedin: "https://linkedin.com/in/kanika-singh",
+      imageUrl: "/images/team/anchor-lead.jpg",
       category: "anchor",
     },
     {
-      id: 22,
-      name: "Suryansh",
+      id: 39,
+      name: "Pulkit Shukla",
       role: "Anchor",
-      department: "B.A. - JMC",
-      email: "25LBAJ1006@culkomail.in",
-      imageUrl: "/images/team/achor3.png",
+      department: "",
+      email: "pulkit.shukla@culkomail.in",
+      linkedin: "https://linkedin.com/in/pulkit-shukla",
+      imageUrl: "/images/team/anchor1.jpg",
+      category: "anchor",
+    },
+    {
+      id: 40,
+      name: "Ridham Taygi",
+      role: "Anchor",
+      department: "",
+      email: "ridham.taygi@culkomail.in",
+      linkedin: "https://linkedin.com/in/ridham-taygi",
+      imageUrl: "/images/team/anchor2.jpg",
       category: "anchor",
     },
   ];
@@ -221,6 +353,7 @@ export default function Team() {
   const faculty = members.filter(m => m.category === "faculty");
   const core = members.filter(m => m.category === "core");
   const tech = members.filter(m => m.category === "tech");
+  const marketing = members.filter(m => m.category === "marketing");
   const media = members.filter(m => m.category === "media");
   const events = members.filter(m => m.category === "events");
   const anchor = members.filter(m => m.category === "anchor");
@@ -294,6 +427,21 @@ export default function Team() {
             </section>
           )}
 
+          {/* Marketing Team - NEW */}
+          {!isLoading && marketing.length > 0 && (
+            <section>
+              <h2 className="text-2xl font-bold text-center mb-12 font-heading text-primary relative inline-block left-1/2 -translate-x-1/2">
+                Marketing Team
+                <div className="absolute -bottom-3 left-0 w-full h-1 bg-primary/20 rounded-full"></div>
+              </h2>
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                {marketing.map((member) => (
+                  <TeamCard key={member.id} member={member} />
+                ))}
+              </div>
+            </section>
+          )}
+
           {/* Media Team */}
           {!isLoading && media.length > 0 && (
             <section>
@@ -309,7 +457,20 @@ export default function Team() {
             </section>
           )}
 
-          
+          {/* Events Team */}
+          {!isLoading && events.length > 0 && (
+            <section>
+              <h2 className="text-2xl font-bold text-center mb-12 font-heading text-primary relative inline-block left-1/2 -translate-x-1/2">
+                Events Team
+                <div className="absolute -bottom-3 left-0 w-full h-1 bg-primary/20 rounded-full"></div>
+              </h2>
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                {events.map((member) => (
+                  <TeamCard key={member.id} member={member} />
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Anchoring Team */}
           {!isLoading && anchor.length > 0 && (
@@ -370,15 +531,41 @@ function TeamCard({ member }: { member: TeamMember }) {
           <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{member.bio}</p>
         )}
 
-        <div className="flex justify-center gap-3 pt-2">
+        <div className="flex justify-center gap-6 pt-4">
+          {/* Email Icon */}
+          {member.email && (
+            <a 
+              href={`mailto:${member.email}`}
+              className="text-slate-400 hover:text-primary transition-colors p-2 hover:bg-gray-50 rounded-full"
+              title={`Email ${member.name}`}
+            >
+              <Mail className="w-5 h-5" />
+            </a>
+          )}
+          
+          {/* LinkedIn Icon */}
+          {member.linkedin && (
+            <a 
+              href={member.linkedin} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-[#0077B5] transition-colors p-2 hover:bg-gray-50 rounded-full"
+              title={`View ${member.name}'s LinkedIn`}
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+          )}
+          
+          {/* Existing Social Links */}
           {member.socialLinks?.linkedin && (
             <a 
               href={member.socialLinks.linkedin} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-[#0077B5] transition-colors"
+              className="text-slate-400 hover:text-[#0077B5] transition-colors p-2 hover:bg-gray-50 rounded-full"
+              title={`View ${member.name}'s LinkedIn`}
             >
-              <Linkedin className="w-4 h-4" />
+              <Linkedin className="w-5 h-5" />
             </a>
           )}
           {member.socialLinks?.twitter && (
@@ -386,17 +573,10 @@ function TeamCard({ member }: { member: TeamMember }) {
               href={member.socialLinks.twitter} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-[#1DA1F2] transition-colors"
+              className="text-slate-400 hover:text-[#1DA1F2] transition-colors p-2 hover:bg-gray-50 rounded-full"
+              title={`View ${member.name}'s Twitter`}
             >
-              <Twitter className="w-4 h-4" />
-            </a>
-          )}
-          {member.email && (
-            <a 
-              href={`mailto:${member.email}`}
-              className="text-slate-400 hover:text-primary transition-colors"
-            >
-              <Mail className="w-4 h-4" />
+              <Twitter className="w-5 h-5" />
             </a>
           )}
         </div>
