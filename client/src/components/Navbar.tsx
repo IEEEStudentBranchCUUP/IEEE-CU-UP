@@ -24,7 +24,7 @@ return (
       <Link href="/" className="flex items-center space-x-4">
 <div className="flex items-center">
   <img 
-    src="/images/team/Screenshot 2025-09-23 142329.png" 
+    src="/images/team/CU_Logo.png" 
     alt="CU Logo" 
     className="h-16 w-auto" 
   />
