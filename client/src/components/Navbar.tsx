@@ -10,7 +10,7 @@ const navItems = [
   { label: "Events", href: "/events" },
   { label: "Members", href: "/members" },
   { label: "Team", href: "/team" },
-  { label: "Gallery", href: "https://python008-dev.github.io/ieee_gallery/" },
+  { label: "Gallery", href: "https://ieeestudentbranchcuup.github.io/gallery-ieee/index.html" },
   { label: "Contact", href: "/contact" },
 ];
 
