@@ -466,11 +466,18 @@ export default function Home() {
                   <span className="inline-block py-2 px-4 rounded-full bg-blue-100 text-primary text-sm font-semibold mb-6 border border-primary/20">
                     Where Students Build the Future with AI
                   </span>
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 font-heading">
-                    <span className="text-[#00629B]">IEEE</span> Student Branch <br />
-                    <span className="text-red-500">Chandigarh </span>
-                    <span className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 font-heading">University</span>
-                  </h1>
+                 <div className="text-center mb-6">
+  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight font-heading">
+    <span className="text-[#00629B]">IEEE</span> Student Branch
+  </h1>
+  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-2 font-heading">
+    <span className="text-red-500">Chandigarh</span>
+    <span className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight font-heading"> University</span>
+  </h2>
+  <p className="text-gray-600 text-2xl md:text-3xl mt-3 font-heading">
+    Uttar Pradesh, India
+  </p>
+</div>
                   <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
                     Connect with the world's largest technical professional organization. 
                     Innovate, collaborate, and shape the future of technology with us.
@@ -701,7 +708,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
       <Footer />
     </div>
   );
