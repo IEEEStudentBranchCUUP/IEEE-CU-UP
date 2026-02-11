@@ -59,7 +59,7 @@ function App() {
               </button>
 
               <img
-                src="/inauguration.png"   // 👉 Make sure image is inside public folder
+                src="/ieeebanner12feb.jpeg"   // 👉 Make sure image is inside public folder
                 alt="IEEE Inauguration"
                 style={{ width: "100%", borderRadius: "10px" }}
               />
