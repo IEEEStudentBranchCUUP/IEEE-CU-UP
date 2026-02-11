@@ -13,6 +13,10 @@ import Members from "@/pages/MemberCard";
 import Register from "@/pages/register";
 import Guidelines from "@/pages/guide";
 
+/* ================= POPUP IMPORTS (DELETE AFTER INAUGURATION) ================= */
+import { useState, useEffect } from "react";
+/* ============================================================================ */
+
 function Router() {
   return (
     <Switch>
@@ -23,17 +27,47 @@ function Router() {
       <Route path="/team" component={Team} />
       <Route path="/contact" component={Contact} />
       <Route path="/guide" component={Guidelines} />
-      <Route path="/join" component={Register} /> {/* Redirect join to contact for now */}
+      <Route path="/join" component={Register} />
       <Route component={NotFound} />
     </Switch>
   );
 }
 
 function App() {
+  /* ================= POPUP STATE (DELETE AFTER INAUGURATION) ================= */
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    setShowPopup(true);
+  }, []);
+  /* ============================================================================ */
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
+
+        {/* ================= POPUP UI (DELETE AFTER INAUGURATION) ================= */}
+        {showPopup && (
+          <div style={overlayStyle}>
+            <div style={imageContainer}>
+              <button
+                style={closeBtn}
+                onClick={() => setShowPopup(false)}
+              >
+                ✖
+              </button>
+
+              <img
+                src="/inauguration.png"   // 👉 Make sure image is inside public folder
+                alt="IEEE Inauguration"
+                style={{ width: "100%", borderRadius: "10px" }}
+              />
+            </div>
+          </div>
+        )}
+        {/* ======================================================================= */}
+
         <Router />
       </TooltipProvider>
     </QueryClientProvider>
@@ -41,3 +75,39 @@ function App() {
 }
 
 export default App;
+
+/* ================= POPUP STYLES (DELETE AFTER INAUGURATION) ================= */
+
+const overlayStyle: React.CSSProperties = {
+  position: "fixed",
+  top: 0,
+  left: 0,
+  width: "100vw",
+  height: "100vh",
+  backgroundColor: "rgba(0,0,0,0.7)",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  zIndex: 9999,
+};
+
+const imageContainer: React.CSSProperties = {
+  position: "relative",
+  width: "90%",
+  maxWidth: "500px",
+};
+
+const closeBtn: React.CSSProperties = {
+  position: "absolute",
+  top: "10px",
+  right: "10px",
+  background: "white",
+  border: "none",
+  borderRadius: "50%",
+  width: "30px",
+  height: "30px",
+  cursor: "pointer",
+  fontWeight: "bold",
+};
+
+/* ============================================================================ */
