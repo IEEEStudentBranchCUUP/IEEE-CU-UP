@@ -2,14 +2,27 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Mail, User, Filter, ChevronDown, Building, Calendar, Award, Hash, Linkedin, GraduationCap, BookOpen } from "lucide-react";
+import { Mail, User, Filter, ChevronDown, Building, Calendar, Award, Hash, Linkedin, GraduationCap, BookOpen, X } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 
+// Helper function to extract UID from email and convert letters to uppercase
+const extractUID = (email) => {
+  if (!email) return '';
+  const match = email.match(/^(\d+[a-z]+[a-z0-9]+)@/);
+  if (!match) return '';
+  
+  const uid = match[1];
+  // Convert the letter part (after numbers) to uppercase
+  const numberPart = uid.match(/^\d+/)[0];
+  const letterPart = uid.slice(numberPart.length);
+  return numberPart + letterPart.toUpperCase();
+};
+
 // Dummy member data - LinkedIn URLs ke saath
 const dummyMembers = [
-{
+  {
     id: "101933725",
     name: "Paras Tiwari",
     email: "25lbcs1079@culkomail.in",
@@ -23,7 +36,7 @@ const dummyMembers = [
     course: "B.Tech CSE Core",
     status: "Active"
   },
-{
+  {
     id: "102047614",
     name: "Anubhav Singh",
     email: "25lbec1014@culkomail.in",
@@ -37,7 +50,7 @@ const dummyMembers = [
     course: "B.tech ECE",
     status: "Active"
   },
-{
+  {
     id: "101932765",
     name: "Mayank Kumar Mishra",
     email: "25lmcs1014@culkomail.in",
@@ -51,7 +64,7 @@ const dummyMembers = [
     course: "M. Tech",
     status: "Active"
   },
-{
+  {
     id: "101932040",
     name: "Naitik Srivastava",
     email: "25lbcs1011@culkomail.in",
@@ -65,7 +78,7 @@ const dummyMembers = [
     course: "B.Tech CSE Core",
     status: "Active"
   },
-{
+  {
     id: "101932497",
     name: "Kanika Singh",
     email: "25lbcs1377@culkomail.in",
@@ -79,7 +92,7 @@ const dummyMembers = [
     course: "Btech.CSE",
     status: "Active"
   },
-{
+  {
     id: "102047487",
     name: "Sheetanshu Gautam",
     email: "25lbec1027@culkomail.in",
@@ -93,7 +106,7 @@ const dummyMembers = [
     course: "B Tech ece",
     status: "Active"
   },
-{
+  {
     id: "101931955",
     name: "Jayant Singh",
     email: "25lbcs1012@culkomail.in",
@@ -107,7 +120,7 @@ const dummyMembers = [
     course: "BTech CSE core",
     status: "Active"
   },
-{
+  {
     id: "102049043",
     name: "Abhedya Pratap Singh",
     email: "25lbec1009@culkomail.in",
@@ -121,7 +134,7 @@ const dummyMembers = [
     course: "B.Tech ECE",
     status: "Active"
   },
-{
+  {
     id: "97277330",
     name: "Raaj Shekhar",
     email: "25lmcs1004@culkomail.in",
@@ -135,7 +148,7 @@ const dummyMembers = [
     course: "M. Tech. CSE AI-ML",
     status: "Active"
   },
-{
+  {
     id: "101932317",
     name: "Mayank Gautam",
     email: "25lbit1022@culkomail.in",
@@ -149,7 +162,7 @@ const dummyMembers = [
     course: "BTech IT",
     status: "Active"
   },
-{
+  {
     id: "101932496",
     name: "Aadya Gupta",
     email: "25lbcs1335@culkomail.in",
@@ -163,7 +176,7 @@ const dummyMembers = [
     course: "Btech CSE core",
     status: "Active"
   },
-{
+  {
     id: "101946760",
     name: "Mohd Humza",
     email: "25lbcs1305@culkomail.in",
@@ -177,7 +190,7 @@ const dummyMembers = [
     course: "Btech",
     status: "Active"
   },
-{
+  {
     id: "101932511",
     name: "Ayan Ahmad Khan",
     email: "25lbcs1294@culkomail.in",
@@ -191,7 +204,7 @@ const dummyMembers = [
     course: "B.Tech CSE",
     status: "Active"
   },
-{
+  {
     id: "101944697",
     name: "Deepanjali Srivastava",
     email: "25lbcs1291@culkomail.in",
@@ -205,7 +218,7 @@ const dummyMembers = [
     course: "Btech CSE",
     status: "Active"
   },
-{
+  {
     id: "102047984",
     name: "Rohit Kumawat",
     email: "25lbec1020@culkomail.in",
@@ -219,7 +232,7 @@ const dummyMembers = [
     course: "B.tech (ECE)",
     status: "Active"
   },
-{
+  {
     id: "102047474",
     name: "Ansh Pratap Verma",
     email: "25lbec1018@culkomail.in",
@@ -233,7 +246,7 @@ const dummyMembers = [
     course: "B.tech ECE",
     status: "Active"
   },
-{
+  {
     id: "101995486",
     name: "Raunak Kumar",
     email: "25lbec1006@culkomail.in",
@@ -247,7 +260,7 @@ const dummyMembers = [
     course: "B tech ECE",
     status: "Active"
   },
-{
+  {
     id: "101934289",
     name: "Shashank Pandey",
     email: "25lbbc1048@culkomail.in",
@@ -261,10 +274,10 @@ const dummyMembers = [
     course: "Bca ( Hons.)",
     status: "Active"
   },
-{
+  {
     id: "101932390",
     name: "Akshara Bajpai",
-    email: "25lbit1024 @culkomail.in",
+    email: "25lbit1024@@culkomail.in",
     linkedin: "https://www.linkedin.com/in/akshara-bajpai-0a7559397?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     campus: "Chandigarh University Main",
     state: "Punjab",
@@ -275,7 +288,7 @@ const dummyMembers = [
     course: "Btech IT",
     status: "Active"
   },
-{
+  {
     id: "101932602",
     name: "Sampoorn Tripathi",
     email: "25lbcs1261@culkomail.in",
@@ -289,7 +302,7 @@ const dummyMembers = [
     course: "BTech CSE CORE",
     status: "Active"
   },
-{
+  {
     id: "101930539",
     name: "Aaradhya Gupta",
     email: "25lbcs1099@culkomail.in",
@@ -303,7 +316,7 @@ const dummyMembers = [
     course: "B. Tech CSE Core",
     status: "Active"
   },
-{
+  {
     id: "102047289",
     name: "Pulkit Shukla",
     email: "25lbec1010@culkomail.in",
@@ -317,7 +330,7 @@ const dummyMembers = [
     course: "ECE",
     status: "Active"
   },
-{
+  {
     id: "101930703",
     name: "Suryansh Kumar Gupta",
     email: "25lmcs1005@culkomail.in",
@@ -331,7 +344,7 @@ const dummyMembers = [
     course: "M. Tech. CSE AI-ML",
     status: "Active"
   },
-{
+  {
     id: "101931975",
     name: "Animesh Mishra",
     email: "25lbcs1039@culkomail.in",
@@ -345,7 +358,7 @@ const dummyMembers = [
     course: "B.tech CSE",
     status: "Active"
   },
-{
+  {
     id: "100697627",
     name: "Ishan Yadav",
     email: "25lbcs1278@culkomail.com",
@@ -359,11 +372,11 @@ const dummyMembers = [
     course: "B.Tech .CSE",
     status: "Active"
   },
-{
+  {
     id: "102049052",
     name: "Anu Yadav",
     email: "25lbec1003@culkomail.in",
-    linkedin: "https://my LinkedIn is not working so I’ll send you later.",
+    linkedin: "https://my LinkedIn is not working so I'll send you later.",
     campus: "Chandigarh University Main",
     state: "Punjab",
     membershipType: "Student",
@@ -373,7 +386,7 @@ const dummyMembers = [
     course: "B. Tech ECE",
     status: "Active"
   },
-{
+  {
     id: "97407232",
     name: "Sarfaraj Salim Khan",
     email: "25lmcs1001@culkomail.in",
@@ -387,7 +400,7 @@ const dummyMembers = [
     course: "M.Tech. CSE - AI/ML",
     status: "Active"
   },
-{
+  {
     id: "102047487",
     name: "Sheetanshu Gautam",
     email: "25lbec1027@culkomail.in",
@@ -401,7 +414,7 @@ const dummyMembers = [
     course: "Btech ECE",
     status: "Active"
   },
-{
+  {
     id: "102049139",
     name: "Paavika Rastogi",
     email: "25lbec1002@culkomail.in",
@@ -415,7 +428,10 @@ const dummyMembers = [
     course: "Btech ECE",
     status: "Active"
   },
-];
+].map(member => ({
+  ...member,
+  uid: extractUID(member.email)
+}));
 
 // Campus options
 const campusOptions = ["All Campuses", "Chandigarh University UP", "Chandigarh University Main"];
@@ -437,13 +453,18 @@ export default function Members() {
   // Initial members - filter lagane se pehle
   const [membersToShow, setMembersToShow] = useState(dummyMembers);
 
+  // Clear search input
+  const clearSearch = () => {
+    setSearchQuery("");
+  };
+
   // Apply filter function
   const applyFilters = () => {
     const filteredMembers = dummyMembers.filter(member => {
       const matchesSearch = 
         member.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         member.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        member.id.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        member.uid.toLowerCase().includes(searchQuery.toLowerCase()) ||
         member.department.toLowerCase().includes(searchQuery.toLowerCase()) ||
         member.school.toLowerCase().includes(searchQuery.toLowerCase()) ||
         member.course.toLowerCase().includes(searchQuery.toLowerCase());
@@ -534,18 +555,26 @@ export default function Members() {
                   </Button>
                 </div>
                 
-                {/* Search Input */}
+                {/* Search Input with Clear Button */}
                 <div className="relative mb-6">
                   <Input              
                     type="text"
-                    placeholder="Search by name, email, ID, department, school, or course..."
-                    className="pl-12 py-6 text-base border-2 border-gray-200 focus:border-[#00629B] focus:ring-2 focus:ring-[#00629B]/10 rounded-lg"
+                    placeholder="Search by name, UID, department, school, or course..."
+                    className="pl-12 pr-10 py-6 text-base border-2 border-gray-200 focus:border-[#00629B] focus:ring-2 focus:ring-[#00629B]/10 rounded-lg"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                   />
                   <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
                     <User className="h-5 w-5" />
                   </div>
+                  {searchQuery && (
+                    <button
+                      onClick={clearSearch}
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                    >
+                      <X className="h-5 w-5" />
+                    </button>
+                  )}
                 </div>
 
                 {/* Filters Panel */}
@@ -701,7 +730,7 @@ export default function Members() {
                             Member Name
                           </th>
                           <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            ID
+                            UID
                           </th>
                           <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             School
@@ -709,14 +738,8 @@ export default function Members() {
                           <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Course
                           </th>
-                          <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden lg:table-cell">
-                            Contact
-                          </th>
-                          <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Campus & Department
-                          </th>
                           <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">
-                            Membership
+                            Membership Status
                           </th>
                           <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Actions
@@ -739,7 +762,7 @@ export default function Members() {
                                 </div>
                                 <div>
                                   <div className="text-sm font-medium text-gray-900">{member.name}</div>
-                                  <div className="text-xs text-gray-500 md:hidden">{member.email}</div>
+                                  <div className="text-xs text-gray-500 md:hidden">Email: {member.email}</div>
                                 </div>
                               </div>
                             </td>
@@ -747,7 +770,7 @@ export default function Members() {
                               <div className="flex items-center">
                                 <Hash className="h-3 w-3 text-gray-400 mr-2" />
                                 <span className="text-xs font-medium text-gray-900 font-mono bg-gray-50 px-2 py-1 rounded border border-gray-200">
-                                  {member.id}
+                                  {member.uid}
                                 </span>
                               </div>
                             </td>
@@ -762,15 +785,6 @@ export default function Members() {
                                 <BookOpen className="h-3.5 w-3.5 text-gray-400 mr-2 mt-0.5 flex-shrink-0" />
                                 <div className="text-sm text-gray-900">{member.course}</div>
                               </div>
-                            </td>
-                            <td className="px-4 md:px-6 py-4 whitespace-nowrap hidden lg:table-cell">
-                              <div className="space-y-2">
-                                <div className="text-sm text-gray-900 truncate max-w-[180px]">{member.email}</div>
-                              </div>
-                            </td>
-                            <td className="px-4 md:px-6 py-4">
-                              <div className="text-sm text-gray-900">{member.campus}</div>
-                              <div className="text-xs text-gray-500">{member.department}</div>
                             </td>
                             <td className="px-4 md:px-6 py-4 whitespace-nowrap hidden md:table-cell">
                               <div className="flex flex-col gap-1">
@@ -838,7 +852,7 @@ export default function Members() {
                               </div>
                               <div>
                                 <div className="font-medium text-gray-900">{member.name}</div>
-                                <div className="text-xs text-gray-500">ID: {member.id}</div>
+                                <div className="text-xs text-gray-500">UID: {member.uid}</div>
                               </div>
                             </div>
                             <span className={`px-2 py-1 text-xs rounded-full ${
@@ -869,29 +883,12 @@ export default function Members() {
                               </div>
                             </div>
                             
-                            <div className="flex items-start">
-                              <Building className="h-4 w-4 text-gray-400 mr-2 mt-0.5 flex-shrink-0" />
-                              <div>
-                                <div className="font-medium">Campus:</div>
-                                <div className="text-gray-700">{member.campus}</div>
-                                <div className="text-xs text-gray-500">{member.department}</div>
-                              </div>
-                            </div>
-                            
                             <div>
-                              <div className="font-medium mb-1">Contact:</div>
-                              <div className="text-gray-700 mb-1">{member.email}</div>
-                              {member.linkedin && (
-                                <a 
-                                  href={member.linkedin}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="inline-flex items-center text-xs text-[#0077B5] hover:text-[#0077B5]/80"
-                                >
-                                  <Linkedin className="h-3 w-3 mr-1" />
-                                  LinkedIn Profile
-                                </a>
-                              )}
+                              <div className="font-medium mb-1">Membership:</div>
+                              <div className="text-gray-700 mb-1">
+                                <span className="text-gray-600">Since {member.membershipYear}</span>
+                                <span className="ml-2 text-green-600 font-medium">{member.status}</span>
+                              </div>
                             </div>
                           </div>
                           
