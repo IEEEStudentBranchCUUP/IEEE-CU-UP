@@ -277,16 +277,6 @@ export default function Team() {
       category: "events",
     },
     {
-      id: 33,
-      name: "Paras Tiwari",
-      role: "Event Team Member",
-      department: "",
-      email: "paras.tiwari@culkomail.in",
-      linkedin: "https://www.linkedin.com/in/paras-tiwari-6ab5201b6?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-      imageUrl: "/images/team/event1.jpg",
-      category: "events",
-    },
-    {
       id: 34,
       name: "Animesh Mishra",
       role: "Event Team Member",
