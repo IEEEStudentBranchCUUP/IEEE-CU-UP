@@ -405,20 +405,7 @@ const CampusInfoSection = () => {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* Location Info - Added in text section instead of overlay */}
-            <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-white border border-blue-200 flex items-center justify-center">
-                  <MapPin className="h-5 w-5 text-[#00629B]" />
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900">Campus Location</p>
-                  <p className="text-sm text-gray-700">Uttar Pradesh, India</p>
-                </div>
-              </div>
-            </div>
+            </div>  
           </motion.div>
         </div>
 
@@ -450,52 +437,56 @@ const CampusInfoSection = () => {
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans">
-      <Navbar />
+<Navbar />
 
-      <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="relative bg-slate-50 py-24 lg:py-32 overflow-hidden border-b border-slate-200">
-          <div className="container-custom relative z-10">
-            <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
-              <div className="max-w-3xl">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <span className="inline-block py-2 px-4 rounded-full bg-blue-100 text-primary text-sm font-semibold mb-6 border border-primary/20">
-                    Where Students Build the Future with AI
-                  </span>
-<div className="text-center mb-6">
-  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight font-heading">
-    <span className="text-[#00629B]">IEEE</span> Student Branch
-  </h1>
-  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-2 font-heading">
-    <span className="text-red-500">Chandigarh</span>
-    <span className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight font-heading"> University</span>
-  </h2>
-  <p className="text-3xl md:text-4xl mt-4 font-heading text-black font-medium">
-    Uttar Pradesh
-  </p>
-</div>
-                  <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
-                    Connect with the world's largest technical professional organization. 
-                    Innovate, collaborate, and shape the future of technology with us.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Link href="/join">
-                      <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 h-12 text-base shadow-md rounded-full">
-                        Join Our Community
-                      </Button>
-                    </Link>
-                    <Link href="/events">
-                      <Button variant="outline" size="lg" className="px-8 h-12 text-base border-primary/20 hover:bg-slate-100 text-primary rounded-full">
-                        View Events
-                      </Button>
-                    </Link>
-                  </div>
-                </motion.div>
+<main className="flex-grow">
+  {/* Hero Section */}
+  <section className="relative bg-slate-50 py-24 lg:py-32 overflow-hidden border-b border-slate-200">
+    <div className="container-custom relative z-10">
+      <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
+        <div className="max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="inline-block py-2 px-4 rounded-full bg-blue-100 text-primary text-sm font-semibold mb-6 border border-primary/20">
+              Where Students Build the Future with AI
+            </span>
+            
+            <div className="text-left mb-6 relative">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight font-heading">
+                <span className="text-[#00629B]">IEEE</span> Student Branch
+              </h1>
+              <div className="relative inline-block">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-2 font-heading">
+                  <span className="text-5xl md:text-7xl lg:text-7xl font-bold mt-2 font-heading text-red-500">Chandigarh</span>
+                  <span className="text-5xl md:text-7xl lg:text-7xl font-bold tracking-tight font-heading"> University</span>
+                </h2>
+                <p className="absolute left-0 top-full mt-1 text-3xl md:text-4xl font-bold text-black font-medium whitespace-nowrap">
+                  Uttar Pradesh
+                </p>
               </div>
+            </div><br></br>
+
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
+              Connect with the world's largest technical professional organization. 
+              Innovate, collaborate, and shape the future of technology with us.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/join">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 h-12 text-base shadow-md rounded-full">
+                  Join Our Community
+                </Button>
+              </Link>
+              <Link href="/events">
+                <Button variant="outline" size="lg" className="px-8 h-12 text-base border-primary/20 hover:bg-slate-100 text-primary rounded-full">
+                  View Events
+                </Button>
+              </Link>
+            </div>
+          </motion.div>
+        </div>
               
               {/* Circle Text on Right Side - Only shows on desktop */}
               <motion.div 
@@ -535,22 +526,22 @@ export default function Home() {
             description="Connect with 400,000+ students worldwide and build lifelong professional networks"
             icon={Users}
           >
-            <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:gap-10 md:gap-12 px-4 sm:px-6 pb-16 sm:pb-20 md:pb-24 pt-10 sm:pt-12 md:pt-14">
-              <div className="col-span-1 md:col-span-8">
-                <p className="mb-4 sm:mb-5 md:mb-6 text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-                  Join a network of over 400,000 students worldwide. Collaborate with peers, 
-                  learn from industry experts, and participate in global competitions and 
-                  conferences that push the boundaries of technology.
-                </p>
-                <p className="mb-6 sm:mb-7 md:mb-8 text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-                  Our chapter facilitates connections that last a lifetime, providing mentorship 
-                  opportunities and career guidance from experienced professionals.
-                </p>
-              </div>
-              <h2 className="col-span-1 text-2xl sm:text-2xl md:text-3xl font-bold md:col-span-4 text-primary font-heading tracking-tight">
-                Worldwide Network
-              </h2>
-            </div>
+<div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:gap-10 md:gap-12 px-4 sm:px-6 pb-16 sm:pb-20 md:pb-24 pt-10 sm:pt-12 md:pt-14">
+  <h2 className="col-span-1 text-2xl sm:text-2xl md:text-3xl font-bold md:col-span-4 text-primary font-heading tracking-tight order-1 md:order-1">
+    Worldwide Network
+  </h2>
+  <div className="col-span-1 md:col-span-8 order-2 md:order-2">
+    <p className="mb-4 sm:mb-5 md:mb-6 text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
+      Join a network of over 400,000 students worldwide. Collaborate with peers, 
+      learn from industry experts, and participate in global competitions and 
+      conferences that push the boundaries of technology.
+    </p>
+    <p className="mb-6 sm:mb-7 md:mb-8 text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
+      Our chapter facilitates connections that last a lifetime, providing mentorship 
+      opportunities and career guidance from experienced professionals.
+    </p>
+  </div>
+</div>
           </TextParallaxContent>
           
           <TextParallaxContent
