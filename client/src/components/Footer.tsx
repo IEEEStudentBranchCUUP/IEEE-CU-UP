@@ -7,7 +7,7 @@ export function Footer() {
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-xl font-bold text-primary mb-4 font-heading">IEEE CU Student Branch</h3>
+            <h3 className="text-xl font-bold text-primary mb-4 font-heading">IEEE CU  UP Student Branch</h3>
             <p className="text-muted-foreground leading-relaxed max-w-sm">
               Advancing Technology for Humanity. We are a community of students dedicated to learning, innovating, and growing together in the field of engineering and technology.
             </p>
