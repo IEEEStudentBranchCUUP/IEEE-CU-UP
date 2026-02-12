@@ -31,9 +31,9 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 font-heading mb-4">
-                About IEEE Student Branch
-              </h1>
+<h1 className="text-4xl md:text-5xl font-bold text-gray-900 font-heading mb-4">
+  About <span className="text-[#00629B]">IEEE</span> Student Branch
+</h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Empowering Tomorrow's Innovators at Chandigarh University
               </p>
