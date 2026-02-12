@@ -312,8 +312,7 @@ export default function Team() {
       role: "Event Team Member",
       department: "",
       email: "anubhav.singh@culkomail.in",
-      linkedin: "https://www.linkedin.com/in/anubhav-singh-a672353ab/
-",
+   
       imageUrl: "/images/team/event5.jpg",
       category: "events",
     },
