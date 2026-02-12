@@ -405,23 +405,23 @@ export default function Register() {
                               />
                             </div>
 
-                            <div className="space-y-2">
-                              <Label htmlFor="email" className="text-gray-700">
-                                College Email *
-                              </Label>
-                              <Input
-                                id="email"
-                                name="email"
-                                type="email"
-                                value={formData.email}
-                                onChange={handleInputChange}
-                                placeholder="name@cuchd.in"
-                                className={`${errors.email ? "border-red-500 focus:border-red-500" : ""}`}
-                              />
-                              <p className="text-xs text-gray-500">
-                                Use your official college email only
-                              </p>
-                            </div>
+<div className="space-y-2">
+  <Label htmlFor="email" className="text-gray-700">
+    College Email *
+  </Label>
+  <Input
+    id="email"
+    name="email"
+    type="email"
+    value={formData.email}
+    onChange={handleInputChange}
+    placeholder="name@cuchd.in"
+    className={`${errors.email ? "border-red-500 focus:border-red-500" : ""}`}
+  />
+  <p className="text-xs text-gray-500">
+    Use your official college email only
+  </p>
+</div>
                           </div>
 
                           <div className="space-y-4">
