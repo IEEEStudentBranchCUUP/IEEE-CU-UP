@@ -2,7 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Mail, User, Filter, ChevronDown, Building, Calendar, Award, Hash, Linkedin, GraduationCap, BookOpen, X } from "lucide-react";
+import { Mail, User, Filter, ChevronDown, Building, Calendar, Award, Hash, Linkedin, GraduationCap, BookOpen, X, IdCard } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
@@ -20,7 +20,7 @@ const extractUID = (email) => {
   return numberPart + letterPart.toUpperCase();
 };
 
-// Dummy member data - LinkedIn URLs ke saath
+// Dummy member data - Original ID ko Member ID banaya
 const dummyMembers = [
   {
     id: "101933725",
@@ -277,7 +277,7 @@ const dummyMembers = [
   {
     id: "101932390",
     name: "Akshara Bajpai",
-    email: "25lbit1024@@culkomail.in",
+    email: "25lbit1024@culkomail.in",
     linkedin: "https://www.linkedin.com/in/akshara-bajpai-0a7559397?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     campus: "Chandigarh University Main",
     state: "Punjab",
@@ -401,20 +401,6 @@ const dummyMembers = [
     status: "Active"
   },
   {
-    id: "102047487",
-    name: "Sheetanshu Gautam",
-    email: "25lbec1027@culkomail.in",
-    linkedin: "https://Na",
-    campus: "Chandigarh University Main",
-    state: "Punjab",
-    membershipType: "Student",
-    membershipYear: 2025,
-    department: "Btech ECE",
-    school: "SCHOOL OF ENGINEERING",
-    course: "Btech ECE",
-    status: "Active"
-  },
-  {
     id: "102049139",
     name: "Paavika Rastogi",
     email: "25lbec1002@culkomail.in",
@@ -427,81 +413,113 @@ const dummyMembers = [
     school: "School of engineering",
     course: "Btech ECE",
     status: "Active"
-  },
+  }
 ].map(member => ({
   ...member,
-  uid: extractUID(member.email)
+  uid: extractUID(member.email),
+  memberId: member.id // Original ID ko hi Member ID banaya
 }));
 
 // Campus options
-const campusOptions = ["All Campuses", "Chandigarh University UP", "Chandigarh University Main"];
-const membershipOptions = ["All Types", "Student Member", "Professional", "Graduate Member"];
+const membershipOptions = ["All Types", "Student", "Graduate"];
 const yearOptions = ["All Years", "2025", "2026"];
-const schoolOptions = ["All Schools", "School of Engineering and Technology", "School of Computing and Information Systems", "School of Electronics and Electrical Engineering", "School of Business and Management", "School of Computer Applications", "School of Law"];
-const courseOptions = ["All Courses", "B.Tech Computer Science and Engineering", "B.Tech Artificial Intelligence and Machine Learning", "B.Tech Electronics and Communication Engineering", "Bachelor of Business Administration (BBA)", "B.Tech Data Science and Analytics", "Master of Computer Applications (MCA)", "Bachelor of Laws (LL.B.)", "Master of Business Administration (MBA)", "B.Tech Civil Engineering", "M.Tech Computer Science and Engineering"];
+const schoolOptions = ["All Schools", "School of Computer Science and Engineering", "School of Engineering", "School of computing", "School of CSE", "School of core engineering", "Computer Science and Engineering", "School of computer science engineering"];
+const courseOptions = ["All Courses", "B.Tech CSE Core", "B.tech ECE", "M. Tech", "Btech.CSE", "B Tech ece", "BTech CSE core", "B.Tech ECE", "M. Tech. CSE AI-ML", "BTech IT", "Btech", "B.Tech CSE", "Bca ( Hons.)", "BTech CSE CORE", "B. Tech CSE Core", "ECE", "B.tech CSE", "B.Tech .CSE", "B. Tech ECE", "M.Tech. CSE - AI/ML", "Btech ECE"];
 
 export default function Members() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCampus, setSelectedCampus] = useState("All Campuses");
   const [selectedType, setSelectedType] = useState("All Types");
   const [selectedYear, setSelectedYear] = useState("All Years");
   const [selectedSchool, setSelectedSchool] = useState("All Schools");
   const [selectedCourse, setSelectedCourse] = useState("All Courses");
   const [showFilters, setShowFilters] = useState(false);
   const [isFilterApplied, setIsFilterApplied] = useState(false);
+  const [filteredMembers, setFilteredMembers] = useState(dummyMembers);
 
-  // Initial members - filter lagane se pehle
-  const [membersToShow, setMembersToShow] = useState(dummyMembers);
+  // Real-time search
+  const handleSearchChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    
+    if (query.trim() === "") {
+      // Agar search empty hai toh filters ke according dikhao
+      applyFiltersWithSearch("");
+    } else {
+      // Search ke according filter karo
+      applyFiltersWithSearch(query);
+    }
+  };
 
-  // Clear search input
+  // Apply filters with search
+  const applyFiltersWithSearch = (searchValue = searchQuery) => {
+    let results = dummyMembers;
+    
+    // Apply search filter
+    if (searchValue.trim() !== "") {
+      results = results.filter(member => 
+        member.name.toLowerCase().includes(searchValue.toLowerCase()) ||
+        member.email.toLowerCase().includes(searchValue.toLowerCase()) ||
+        member.uid.toLowerCase().includes(searchValue.toLowerCase()) ||
+        member.memberId.toLowerCase().includes(searchValue.toLowerCase()) ||
+        member.department?.toLowerCase().includes(searchValue.toLowerCase()) ||
+        member.school.toLowerCase().includes(searchValue.toLowerCase()) ||
+        member.course.toLowerCase().includes(searchValue.toLowerCase())
+      );
+    }
+    
+    // Apply other filters only if they are applied (not default)
+    if (selectedType !== "All Types") {
+      results = results.filter(member => member.membershipType === selectedType);
+    }
+    if (selectedYear !== "All Years") {
+      results = results.filter(member => member.membershipYear.toString() === selectedYear);
+    }
+    if (selectedSchool !== "All Schools") {
+      results = results.filter(member => member.school === selectedSchool);
+    }
+    if (selectedCourse !== "All Courses") {
+      results = results.filter(member => member.course === selectedCourse);
+    }
+    
+    setFilteredMembers(results);
+    setIsFilterApplied(
+      searchValue.trim() !== "" || 
+      selectedType !== "All Types" || 
+      selectedYear !== "All Years" || 
+      selectedSchool !== "All Schools" || 
+      selectedCourse !== "All Courses"
+    );
+  };
+
+  // Apply filters on button click
+  const applyFilters = () => {
+    applyFiltersWithSearch(searchQuery);
+  };
+
+  // Clear search
   const clearSearch = () => {
     setSearchQuery("");
+    applyFiltersWithSearch("");
   };
 
-  // Apply filter function
-  const applyFilters = () => {
-    const filteredMembers = dummyMembers.filter(member => {
-      const matchesSearch = 
-        member.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        member.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        member.uid.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        member.department.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        member.school.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        member.course.toLowerCase().includes(searchQuery.toLowerCase());
-      
-      const matchesCampus = selectedCampus === "All Campuses" || member.campus === selectedCampus;
-      const matchesType = selectedType === "All Types" || member.membershipType === selectedType;
-      const matchesYear = selectedYear === "All Years" || member.membershipYear.toString() === selectedYear;
-      const matchesSchool = selectedSchool === "All Schools" || member.school === selectedSchool;
-      const matchesCourse = selectedCourse === "All Courses" || member.course === selectedCourse;
-      
-      return matchesSearch && matchesCampus && matchesType && matchesYear && matchesSchool && matchesCourse;
-    });
-
-    setMembersToShow(filteredMembers);
-    setIsFilterApplied(true);
-  };
-
-  // Clear all filters
+  // Clear all filters and search
   const clearAllFilters = () => {
     setSearchQuery("");
-    setSelectedCampus("All Campuses");
     setSelectedType("All Types");
     setSelectedYear("All Years");
     setSelectedSchool("All Schools");
     setSelectedCourse("All Courses");
-    setMembersToShow(dummyMembers);
+    setFilteredMembers(dummyMembers);
     setIsFilterApplied(false);
   };
 
   // Clear only filter selections (not search)
   const clearFiltersOnly = () => {
-    setSelectedCampus("All Campuses");
     setSelectedType("All Types");
     setSelectedYear("All Years");
     setSelectedSchool("All Schools");
     setSelectedCourse("All Courses");
-    applyFilters();
+    applyFiltersWithSearch(searchQuery);
   };
 
   return (
@@ -535,12 +553,7 @@ export default function Members() {
                 {/* Search Bar and Controls */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                   <div className="text-sm text-gray-600">
-                    Showing <span className="font-bold text-[#00629B]">{membersToShow.length}</span> members
-                    {isFilterApplied && (
-                      <span className="ml-2 text-xs bg-[#00629B]/10 text-[#00629B] px-2 py-1 rounded-full">
-                        Filters Applied
-                      </span>
-                    )}
+                    Showing <span className="font-bold text-[#00629B]">{filteredMembers.length}</span> members
                   </div>
                   
                   <Button
@@ -555,14 +568,14 @@ export default function Members() {
                   </Button>
                 </div>
                 
-                {/* Search Input with Clear Button */}
+                {/* Search Input with Clear Button - Real-time search */}
                 <div className="relative mb-6">
                   <Input              
                     type="text"
-                    placeholder="Search by name, UID, department, school, or course..."
+                    placeholder="Search by name, UID, Member ID, department, school, or course..."
                     className="pl-12 pr-10 py-6 text-base border-2 border-gray-200 focus:border-[#00629B] focus:ring-2 focus:ring-[#00629B]/10 rounded-lg"
                     value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onChange={handleSearchChange}
                   />
                   <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
                     <User className="h-5 w-5" />
@@ -586,21 +599,7 @@ export default function Members() {
                   >
                     <div className="pt-6 border-t border-gray-100">
                       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                        <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
-                            <Building className="h-4 w-4 inline mr-2 text-[#00629B]" />
-                            Campus
-                          </label>
-                          <select 
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00629B]/20 focus:border-[#00629B] text-sm"
-                            value={selectedCampus}
-                            onChange={(e) => setSelectedCampus(e.target.value)}
-                          >
-                            {campusOptions.map(option => (
-                              <option key={option} value={option}>{option}</option>
-                            ))}
-                          </select>
-                        </div>
+                        
                         
                         <div>
                           <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -696,7 +695,7 @@ export default function Members() {
         <section className="py-10">
           <div className="container-custom">
             <div className="max-w-6xl mx-auto">
-              {membersToShow.length > 0 ? (
+              {filteredMembers.length > 0 ? (
                 <>
                   <div className="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div>
@@ -717,7 +716,7 @@ export default function Members() {
                     )}
                   </div>
                   
-                  {/* Table View - Mobile and Desktop responsive */}
+                  {/* Table View - With Member ID column added */}
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -728,6 +727,9 @@ export default function Members() {
                         <tr>
                           <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Member Name
+                          </th>
+                          <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Member ID
                           </th>
                           <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             UID
@@ -747,7 +749,7 @@ export default function Members() {
                         </tr>
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200">
-                        {membersToShow.map((member, index) => (
+                        {filteredMembers.map((member, index) => (
                           <motion.tr 
                             key={member.id}
                             initial={{ opacity: 0 }}
@@ -764,6 +766,14 @@ export default function Members() {
                                   <div className="text-sm font-medium text-gray-900">{member.name}</div>
                                   <div className="text-xs text-gray-500 md:hidden">Email: {member.email}</div>
                                 </div>
+                              </div>
+                            </td>
+                            <td className="px-4 md:px-6 py-4 whitespace-nowrap">
+                              <div className="flex items-center">
+                                <IdCard className="h-3 w-3 text-gray-400 mr-2" />
+                                <span className="text-xs font-medium text-[#00629B] bg-[#00629B]/10 px-2 py-1 rounded border border-[#00629B]/20">
+                                  {member.memberId}
+                                </span>
                               </div>
                             </td>
                             <td className="px-4 md:px-6 py-4 whitespace-nowrap">
@@ -791,8 +801,6 @@ export default function Members() {
                                 <span className={`px-2 py-1 text-xs rounded-full w-fit ${
                                   member.membershipType === "Student" 
                                     ? "bg-[#00629B]/10 text-[#00629B]" 
-                                    : member.membershipType === "Professional"
-                                    ? "bg-purple-100 text-purple-700"
                                     : "bg-green-100 text-green-700"
                                 }`}>
                                   {member.membershipType}
@@ -814,7 +822,7 @@ export default function Members() {
                                     <span className="text-xs">Email</span>
                                   </a>
                                 </Button>
-                                {member.linkedin && (
+                                {member.linkedin && member.linkedin !== "https://nan" && member.linkedin !== "https://Can't find" && member.linkedin !== "https://my LinkedIn is not working so I'll send you later." && member.linkedin !== "https://Right now my linkedin profile was disabled but i am fixing it asap." && (
                                   <Button 
                                     variant="outline" 
                                     size="sm"
@@ -839,11 +847,11 @@ export default function Members() {
                     </table>
                   </motion.div>
                   
-                  {/* Mobile View - For better mobile experience */}
+                  {/* Mobile View - With Member ID added */}
                   <div className="lg:hidden mt-6">
                     <h3 className="text-sm font-medium text-gray-500 mb-4">Mobile View</h3>
                     <div className="grid grid-cols-1 gap-4">
-                      {membersToShow.map((member) => (
+                      {filteredMembers.map((member) => (
                         <div key={member.id} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
                           <div className="flex items-start justify-between mb-3">
                             <div className="flex items-center">
@@ -852,14 +860,18 @@ export default function Members() {
                               </div>
                               <div>
                                 <div className="font-medium text-gray-900">{member.name}</div>
-                                <div className="text-xs text-gray-500">UID: {member.uid}</div>
+                                <div className="text-xs text-gray-500 mt-1">
+                                  <span className="font-medium text-[#00629B] bg-[#00629B]/10 px-2 py-0.5 rounded inline-flex items-center">
+                                    <IdCard className="h-3 w-3 mr-1" />
+                                    {member.memberId}
+                                  </span>
+                                </div>
+                                <div className="text-xs text-gray-500 mt-1">UID: {member.uid}</div>
                               </div>
                             </div>
                             <span className={`px-2 py-1 text-xs rounded-full ${
                               member.membershipType === "Student" 
                                 ? "bg-[#00629B]/10 text-[#00629B]" 
-                                : member.membershipType === "Professional"
-                                ? "bg-purple-100 text-purple-700"
                                 : "bg-green-100 text-green-700"
                             }`}>
                               {member.membershipType}
@@ -904,7 +916,7 @@ export default function Members() {
                                 Email
                               </a>
                             </Button>
-                            {member.linkedin && (
+                            {member.linkedin && member.linkedin !== "https://nan" && member.linkedin !== "https://Can't find" && member.linkedin !== "https://my LinkedIn is not working so I'll send you later." && member.linkedin !== "https://Right now my linkedin profile was disabled but i am fixing it asap." && (
                               <Button 
                                 variant="outline" 
                                 size="sm"
