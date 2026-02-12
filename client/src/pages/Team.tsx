@@ -282,8 +282,7 @@ export default function Team() {
       role: "Event Team Member",
       department: "",
       email: "paras.tiwari@culkomail.in",
-      linkedin: "https://www.linkedin.com/in/paras-tiwari-6ab5201b6?utm_source=share_via&utm_content=profile&utm_medium=member_android
-",
+      linkedin: "https://www.linkedin.com/in/paras-tiwari-6ab5201b6?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       imageUrl: "/images/team/event1.jpg",
       category: "events",
     },
