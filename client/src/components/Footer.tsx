@@ -2,12 +2,16 @@ import { Link } from "wouter";
 import { Facebook, Twitter, Linkedin, Mail, MapPin, Instagram } from "lucide-react";
 
 export function Footer() {
+  const handleClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <footer className="bg-slate-50 border-t border-slate-200 pt-16 pb-8">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-xl font-bold text-primary mb-4 font-heading">IEEE CU  UP Student Branch</h3>
+            <h3 className="text-xl font-bold text-primary mb-4 font-heading">IEEE CU UP Student Branch</h3>
             <p className="text-muted-foreground leading-relaxed max-w-sm">
               Advancing Technology for Humanity. We are a community of students dedicated to learning, innovating, and growing together in the field of engineering and technology.
             </p>
@@ -16,13 +20,45 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link href="/events" className="hover:text-primary transition-colors">Events</Link></li>
-              <li><Link href="/team" className="hover:text-primary transition-colors">Our Team</Link></li>
-               <li><a href="https://services24.ieee.org/membership-validator.html" className="hover:text-primary transition-colors">Membership Benefits</a></li>
+              <li>
+                <Link 
+                  href="/about" 
+                  onClick={handleClick}
+                  className="hover:text-primary transition-colors"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/events" 
+                  onClick={handleClick}
+                  className="hover:text-primary transition-colors"
+                >
+                  Events
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/team" 
+                  onClick={handleClick}
+                  className="hover:text-primary transition-colors"
+                >
+                  Our Team
+                </Link>
+              </li>
+              <li>
+                <a 
+                  href="https://services24.ieee.org/membership-validator.html" 
+                  className="hover:text-primary transition-colors"
+                >
+                  Membership Benefits
+                </a>
+              </li>
             </ul>
           </div>
 
+          {/* Contact section same rahega */}
           <div>
             <h4 className="font-semibold text-foreground mb-4">Contact Us</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
