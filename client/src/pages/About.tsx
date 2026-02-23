@@ -34,9 +34,15 @@ export default function About() {
 <h1 className="text-4xl md:text-5xl font-bold text-gray-900 font-heading mb-4">
   About <span className="text-[#00629B]">IEEE</span> Student Branch
 </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Empowering Tomorrow's Innovators at Chandigarh University
-              </p>
+<p className="text-xl text-gray-600 max-w-3xl mx-auto">
+  Empowering Tomorrow's Innovators at{" "}
+  <span className="text-3xl md:text-2xl lg:text-2xl font-bold mt-2 font-heading text-red-500">
+    Chandigarh
+  </span>
+  <span className="text-xl text-gray-600 max-w-3xl mx-auto">
+    University
+  </span>
+</p>
             </motion.div>
           </div>
         </section>
