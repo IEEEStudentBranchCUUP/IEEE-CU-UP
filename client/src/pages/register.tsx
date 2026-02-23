@@ -34,11 +34,94 @@ export default function Register() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
+    
+    // Contact number validation - sirf digits allow karo
+    if (name === "contact") {
+      // Sirf digits allow karo
+      const digitsOnly = value.replace(/\D/g, '');
+      
+      // Max 10 digits
+      if (digitsOnly.length <= 10) {
+        setFormData(prev => ({
+          ...prev,
+          [name]: digitsOnly
+        }));
+        
+        // Real-time validation
+        if (digitsOnly.length > 0 && digitsOnly.length !== 10) {
+          setErrors(prev => ({
+            ...prev,
+            contact: "Contact number must be exactly 10 digits"
+          }));
+        } else {
+          setErrors(prev => {
+            const newErrors = { ...prev };
+            delete newErrors.contact;
+            return newErrors;
+          });
+        }
+      }
+      return;
+    }
+    
+    // Membership Number validation - sirf digits allow karo
+    if (name === "membershipNumber") {
+      // Sirf digits allow karo
+      const digitsOnly = value.replace(/\D/g, '');
+      
+      // Max 9 digits
+      if (digitsOnly.length <= 9) {
+        setFormData(prev => ({
+          ...prev,
+          [name]: digitsOnly
+        }));
+        
+        // Real-time validation
+        if (digitsOnly.length > 0 && digitsOnly.length !== 9) {
+          setErrors(prev => ({
+            ...prev,
+            membershipNumber: "Membership number must be exactly 9 digits"
+          }));
+        } else {
+          setErrors(prev => {
+            const newErrors = { ...prev };
+            delete newErrors.membershipNumber;
+            return newErrors;
+          });
+        }
+      }
+      return;
+    }
+    
+    // Email validation
+    if (name === "email") {
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+      
+      if (value && !value.includes('@')) {
+        setErrors(prev => ({
+          ...prev,
+          email: "Please enter a valid email address (must contain @)"
+        }));
+      } else {
+        setErrors(prev => {
+          const newErrors = { ...prev };
+          delete newErrors.email;
+          return newErrors;
+        });
+      }
+      return;
+    }
+    
+    // Other fields (name, uid)
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
-    // Clear error for this field
+    
+    // Clear error for other fields
     if (errors[name]) {
       setErrors(prev => {
         const newErrors = { ...prev };
@@ -66,19 +149,39 @@ export default function Register() {
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
     
+    // Name validation
     if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.contact.trim()) newErrors.contact = "Contact number is required";
-    if (!/^\d{10}$/.test(formData.contact)) newErrors.contact = "Enter a valid 10-digit phone number";
-    if (!formData.uid.trim()) newErrors.uid = "UID is required";
-    if (!formData.email.trim()) newErrors.email = "Email is required";
-    if (!/^[a-zA-Z0-9._%+-]+@(cuchd\.in|chandigarh\.edu\.in|chandigarhuniversity\.ac\.in)$/.test(formData.email)) {
-      newErrors.email = "Please use your official college email";
+    
+    // Contact validation - exactly 10 digits
+    if (!formData.contact) {
+      newErrors.contact = "Contact number is required";
+    } else if (formData.contact.length !== 10) {
+      newErrors.contact = "Contact number must be exactly 10 digits";
     }
+    
+    // UID validation
+    if (!formData.uid.trim()) newErrors.uid = "UID is required";
+    
+    // Email validation - koi bhi email accept karo, bas @ hona chahiye
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!formData.email.includes('@')) {
+      newErrors.email = "Please enter a valid email address (must contain @)";
+    }
+    
+    // Academic validation
     if (!formData.course) newErrors.course = "Course is required";
     if (!formData.department) newErrors.department = "Department is required";
     if (!formData.school) newErrors.school = "School is required";
-    if (!formData.membershipNumber.trim()) newErrors.membershipNumber = "IEEE Membership Number is required";
-    if (!/^[0-9]+$/.test(formData.membershipNumber)) newErrors.membershipNumber = "Enter a valid membership number";
+    
+    // Membership Number validation - exactly 9 digits
+    if (!formData.membershipNumber) {
+      newErrors.membershipNumber = "IEEE Membership Number is required";
+    } else if (formData.membershipNumber.length !== 9) {
+      newErrors.membershipNumber = "Membership number must be exactly 9 digits";
+    }
+    
+    // Membership Type validation
     if (!formData.membershipType) newErrors.membershipType = "Membership Type is required";
 
     return newErrors;
@@ -91,6 +194,9 @@ export default function Register() {
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
       setSubmitStatus("error");
+      
+      // Scroll to top to show errors
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
 
@@ -114,12 +220,16 @@ export default function Register() {
         membershipType: ""
       });
       setErrors({});
+      
+      // Scroll to top to show success message
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }, 1500);
   };
 
   const resetForm = () => {
     setSubmitStatus("idle");
     setErrors({});
+    setIsIEEE(null);
   };
 
   return (
@@ -375,6 +485,12 @@ export default function Register() {
                                 placeholder="Enter your full name"
                                 className={`${errors.name ? "border-red-500 focus:border-red-500" : ""}`}
                               />
+                              {errors.name && (
+                                <p className="text-xs text-red-500 flex items-center gap-1">
+                                  <AlertCircle className="h-3 w-3" />
+                                  {errors.name}
+                                </p>
+                              )}
                             </div>
 
                             <div className="space-y-2">
@@ -388,7 +504,14 @@ export default function Register() {
                                 onChange={handleInputChange}
                                 placeholder="10-digit phone number"
                                 className={`${errors.contact ? "border-red-500 focus:border-red-500" : ""}`}
+                                maxLength={10}
                               />
+                              {errors.contact && (
+                                <p className="text-xs text-red-500 flex items-center gap-1">
+                                  <AlertCircle className="h-3 w-3" />
+                                  {errors.contact}
+                                </p>
+                              )}
                             </div>
 
                             <div className="space-y-2">
@@ -403,25 +526,38 @@ export default function Register() {
                                 placeholder="University ID"
                                 className={`${errors.uid ? "border-red-500 focus:border-red-500" : ""}`}
                               />
+                              {errors.uid && (
+                                <p className="text-xs text-red-500 flex items-center gap-1">
+                                  <AlertCircle className="h-3 w-3" />
+                                  {errors.uid}
+                                </p>
+                              )}
                             </div>
 
-<div className="space-y-2">
-  <Label htmlFor="email" className="text-gray-700">
-    College Email *
-  </Label>
-  <Input
-    id="email"
-    name="email"
-    type="email"
-    value={formData.email}
-    onChange={handleInputChange}
-    placeholder="name@cuchd.in"
-    className={`${errors.email ? "border-red-500 focus:border-red-500" : ""}`}
-  />
-  <p className="text-xs text-gray-500">
-    Use your official college email only
-  </p>
-</div>
+                            <div className="space-y-2">
+                              <Label htmlFor="email" className="text-gray-700">
+                                College Email *
+                              </Label>
+                              <Input
+                                id="email"
+                                name="email"
+                                type="email"
+                                value={formData.email}
+                                onChange={handleInputChange}
+                                placeholder="id@culkomail.in"
+                                className={`${errors.email ? "border-red-500 focus:border-red-500" : ""}`}
+                              />
+                              {errors.email ? (
+                                <p className="text-xs text-red-500 flex items-center gap-1">
+                                  <AlertCircle className="h-3 w-3" />
+                                  {errors.email}
+                                </p>
+                              ) : (
+                                <p className="text-xs text-gray-500">
+                                  Use your official college email only
+                                </p>
+                              )}
+                            </div>
                           </div>
 
                           <div className="space-y-4">
@@ -449,6 +585,12 @@ export default function Register() {
                                   ))}
                                 </SelectContent>
                               </Select>
+                              {errors.course && (
+                                <p className="text-xs text-red-500 flex items-center gap-1">
+                                  <AlertCircle className="h-3 w-3" />
+                                  {errors.course}
+                                </p>
+                              )}
                             </div>
 
                             <div className="space-y-2">
@@ -470,6 +612,12 @@ export default function Register() {
                                   ))}
                                 </SelectContent>
                               </Select>
+                              {errors.department && (
+                                <p className="text-xs text-red-500 flex items-center gap-1">
+                                  <AlertCircle className="h-3 w-3" />
+                                  {errors.department}
+                                </p>
+                              )}
                             </div>
 
                             <div className="space-y-2">
@@ -491,6 +639,12 @@ export default function Register() {
                                   ))}
                                 </SelectContent>
                               </Select>
+                              {errors.school && (
+                                <p className="text-xs text-red-500 flex items-center gap-1">
+                                  <AlertCircle className="h-3 w-3" />
+                                  {errors.school}
+                                </p>
+                              )}
                             </div>
                           </div>
                         </div>
@@ -512,12 +666,16 @@ export default function Register() {
                                 name="membershipNumber"
                                 value={formData.membershipNumber}
                                 onChange={handleInputChange}
-                                placeholder="Enter your IEEE membership number"
+                                placeholder="9-digit membership number"
                                 className={`${errors.membershipNumber ? "border-red-500 focus:border-red-500" : ""}`}
+                                maxLength={9}
                               />
-                              <p className="text-xs text-gray-500">
-                                Find this in your IEEE membership confirmation email
-                              </p>
+                              {errors.membershipNumber && (
+                                <p className="text-xs text-red-500 flex items-center gap-1">
+                                  <AlertCircle className="h-3 w-3" />
+                                  {errors.membershipNumber}
+                                </p>
+                              )}
                             </div>
 
                             <div className="space-y-2">
@@ -536,6 +694,12 @@ export default function Register() {
                                   <SelectItem value="Graduate Student Member">Graduate Student Member</SelectItem>
                                 </SelectContent>
                               </Select>
+                              {errors.membershipType && (
+                                <p className="text-xs text-red-500 flex items-center gap-1">
+                                  <AlertCircle className="h-3 w-3" />
+                                  {errors.membershipType}
+                                </p>
+                              )}
                             </div>
                           </div>
                         </div>
