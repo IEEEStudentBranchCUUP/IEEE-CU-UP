@@ -21,3 +21,12 @@ export interface TeamMember {
     email?: string;
   };
 }
+
+export interface GalleryItem {
+  id: number;
+  title: string;
+  description: string;
+  date: string;
+  category: "event" | "workshop" | "seminar" | "activity";
+  imageUrl: string;
+}
