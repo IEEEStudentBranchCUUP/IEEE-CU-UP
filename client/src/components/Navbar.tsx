@@ -10,7 +10,7 @@ const navItems = [
   { label: "Events", href: "/events" },
   { label: "Members", href: "/members" },
   { label: "Team", href: "/team" },
-  { label: "Gallery", href: "https://python008-dev.github.io/ieee_gallery/", external: true }, // Added external flag
+  { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -19,7 +19,7 @@ export function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   // Function to check if link is external
-  const isExternalLink = (href) => {
+  const isExternalLink = (href: string) => {
     return href.startsWith('http') || href.startsWith('https');
   };
 
