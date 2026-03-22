@@ -12,6 +12,7 @@ import Contact from "@/pages/Contact";
 import Members from "@/pages/MemberCard";
 import Register from "@/pages/register";
 import Guidelines from "@/pages/guide";
+import Gallery from "@/pages/Gallery";
 
 /* ================= POPUP IMPORTS (DELETE AFTER INAUGURATION) ================= */
 import { useState, useEffect } from "react";
@@ -23,6 +24,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/events" component={Events} />
+      <Route path="/gallery" component={Gallery} />
       <Route path="/members" component={Members} />
       <Route path="/team" component={Team} />
       <Route path="/contact" component={Contact} />
