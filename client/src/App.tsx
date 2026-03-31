@@ -48,28 +48,6 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-
-        {/* ================= POPUP UI (DELETE AFTER INAUGURATION) ================= */}
-        {showPopup && (
-          <div style={overlayStyle}>
-            <div style={imageContainer}>
-              <button
-                style={closeBtn}
-                onClick={() => setShowPopup(false)}
-              >
-                ✖
-              </button>
-
-              <img
-                src="/ieeebanner12feb.jpeg"   // 👉 Make sure image is inside public folder
-                alt="IEEE Inauguration"
-                style={{ width: "100%", borderRadius: "10px" }}
-              />
-            </div>
-          </div>
-        )}
-        {/* ======================================================================= */}
-
         <Router />
       </TooltipProvider>
     </QueryClientProvider>
