@@ -170,6 +170,17 @@ export default function Team() {
       category: "tech", 
       bio: "Technical team member contributing to system support.",   
     },
+    {
+      id: 17,
+      name: "Deepanjali Singh",
+      role: "Technical Member",
+      department: "B.Tech. CSE - AI/ML",
+      email: "25LMCS1001@culkomail.in",
+      linkedin: "https://www.linkedin.com/in/sarfaraj-salim-khan-8363b92ab/",
+      imageUrl: "/images/team/deepanjali.jpg",
+      category: "tech",
+      bio: "Technical member contributing to system support.",
+    },
     
     // Marketing Team (NEW)
     {
