@@ -1,29 +1,47 @@
 [
   {
     "id": 1,
-    "title": "IEEE Annual Tech Symposium 2025",
-    "description": "Join us for our flagship event featuring keynote speakers from top tech companies, hands-on workshops on AI and IoT, and networking opportunities with industry leaders.",
-    "date": "2025-03-15T09:00:00Z",
+    "title": "AI & Machine Learning Workshop",
+    "description": "Hands-on workshop covering fundamentals of AI/ML, model training, and real-world applications. Perfect for students eager to dive into artificial intelligence.",
+    "date": "2026-05-10T09:00:00Z",
     "type": "upcoming",
-    "location": "Main Auditorium, Chandigarh University",
-    "imageUrl": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1000"
+    "location": "Chandigarh University (UP Campus)",
+    "imageUrl": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format"
   },
   {
     "id": 2,
     "title": "Web Development Bootcamp",
-    "description": "A comprehensive 2-day workshop covering React, Node.js, and modern web deployment strategies. Perfect for beginners and intermediate developers.",
-    "date": "2025-02-10T10:00:00Z",
-    "type": "past",
-    "location": "Computer Lab 3",
-    "imageUrl": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1000"
+    "description": "Intensive bootcamp covering modern web technologies including HTML, CSS, JavaScript, and frameworks. Build real-world projects.",
+    "date": "2026-05-18T09:00:00Z",
+    "type": "upcoming",
+    "location": "Chandigarh University (UP Campus)",
+    "imageUrl": "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&auto=format"
   },
   {
     "id": 3,
-    "title": "Career in IEEE",
-    "description": "Learn about the benefits of IEEE membership and how it can accelerate your career growth.",
-    "date": "2025-04-20T14:00:00Z",
+    "title": "IoT & Embedded Systems Seminar",
+    "description": "Explore the world of Internet of Things and embedded systems. Learn about sensors, microcontrollers, and smart device integration.",
+    "date": "2026-05-25T09:00:00Z",
     "type": "upcoming",
-    "location": "Seminar Hall B",
-    "imageUrl": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&q=80&w=1000"
+    "location": "Chandigarh University (UP Campus)",
+    "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format"
+  },
+  {
+    "id": 4,
+    "title": "Cybersecurity Awareness Webinar",
+    "description": "Online webinar focused on cybersecurity best practices, threat prevention, and career opportunities in information security.",
+    "date": "2024-06-05T09:00:00Z",
+    "type": "past",
+    "location": "Online Webinar",
+    "imageUrl": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format"
+  },
+  {
+    "id": 5,
+    "title": "AI & Robotics Hackathon",
+    "description": "24-hour hackathon to build innovative solutions using AI and robotics. Compete with teams and win exciting prizes.",
+    "date": "2026-06-15T09:00:00Z",
+    "type": "upcoming",
+    "location": "Chandigarh University (UP Campus)",
+    "imageUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format"
   }
 ]
