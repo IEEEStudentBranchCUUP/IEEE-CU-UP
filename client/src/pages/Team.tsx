@@ -230,17 +230,6 @@ export default function Team() {
     
     // Media Team
     {
-      id: 28,
-      name: "Kushagra Srivastava",
-      role: "Social Media Handler",
-      department: "B.Tech. CSE - Core",
-      email: "kushagra.srivastava@culkomail.in",
-      linkedin: "https://linkedin.com/in/kushagra-srivastava",
-      imageUrl: "/images/team/media1.jpg",
-      category: "media",
-      bio: "Managing social platforms",
-    },
-    {
       id: 29,
       name: "Abhinav Gupta",
       role: "Photographer",
