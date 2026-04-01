@@ -31,9 +31,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech.CSE - Core",
+    department: "B.Tech. CSE - Core",
     school: "School of engineering",
-    course: "B.Tech.CSE - Core",
+    course: "B.Tech. CSE - Core",
     status: "Active"
   },
   {
@@ -45,9 +45,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech - ECE",
+    department: "B.Tech. - ECE",
     school: "School Of Engineering",
-    course: "B.Tech - ECE",
+    course: "B.Tech. - ECE",
     status: "Active"
   },
   {
@@ -59,9 +59,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Graduate",
     membershipYear: 2025,
-    department: "M.Tech.CSE - AIML",
+    department: "M.Tech. CSE - AIML",
     school: "School of Computer Science and Engineering",
-    course: "M.Tech.CSE - AIML",
+    course: "M.Tech. CSE - AIML",
     status: "Active"
   },
   {
@@ -73,9 +73,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech.CSE - Core",
+    department: "B.Tech. CSE - Core",
     school: "School of Computer Science and Engineering",
-    course: "B.Tech.CSE - Core",
+    course: "B.Tech. CSE - Core",
     status: "Active"
   },
   {
@@ -87,9 +87,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech.CSE - Core",
+    department: "B.Tech. CSE - Core",
     school: "School of Computer Science and Engineering",
-    course: "B.Tech.CSE - Core",
+    course: "B.Tech. CSE - Core",
     status: "Active"
   },
   {
@@ -101,9 +101,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech - ECE",
+    department: "B.Tech. - ECE",
     school: "School of core engineering",
-    course: "B.Tech - ECE",
+    course: "B.Tech. - ECE",
     status: "Active"
   },
   {
@@ -115,9 +115,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech.CSE - Core",
+    department: "B.Tech. CSE - Core",
     school: "School of computer science and engineering",
-    course: "B.Tech.CSE - Core",
+    course: "B.Tech. CSE - Core",
     status: "Active"
   },
   {
@@ -129,9 +129,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech - ECE",
+    department: "B.Tech. - ECE",
     school: "School of Engineering",
-    course: "B.Tech - ECE",
+    course: "B.Tech. - ECE",
     status: "Active"
   },
   {
@@ -143,9 +143,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Graduate",
     membershipYear: 2025,
-    department: "M.Tech.CSE - AIML",
+    department: "M.Tech. CSE - AIML",
     school: "School of Computer Science and Engineering",
-    course: "M.Tech.CSE - AIML",
+    course: "M.Tech. CSE - AIML",
     status: "Active"
   },
   {
@@ -157,9 +157,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech - IT",
+    department: "B.Tech. - IT",
     school: "School of Computer Science and Engineering",
-    course: "B.Tech - IT",
+    course: "B.Tech. - IT",
     status: "Active"
   },
   {
@@ -171,9 +171,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech.CSE - Core",
+    department: "B.Tech. CSE - Core",
     school: "School of Computer Science and Engineering",
-    course: "B.Tech.CSE - Core",
+    course: "B.Tech. CSE - Core",
     status: "Active"
   },
   {
@@ -185,9 +185,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech.CSE - Core",
+    department: "B.Tech. CSE - Core",
     school: "School of Computer Science and Engineering",
-    course: "B.Tech.CSE - Core",
+    course: "B.Tech. CSE - Core",
     status: "Active"
   },
   {
@@ -199,9 +199,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech.CSE - Core",
+    department: "B.Tech. CSE - Core",
     school: "School of Computer Science and Engineering",
-    course: "B.Tech.CSE - Core",
+    course: "B.Tech. CSE - Core",
     status: "Active"
   },
   {
@@ -213,9 +213,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech.CSE - Core",
+    department: "B.Tech. CSE - Core",
     school: "School of Computer Science and Engineering",
-    course: "B.Tech.CSE - Core",
+    course: "B.Tech. CSE - Core",
     status: "Active"
   },
   {
@@ -227,9 +227,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech - ECE",
+    department: "B.Tech. - ECE",
     school: "School of Engineering",
-    course: "B.Tech - ECE",
+    course: "B.Tech. - ECE",
     status: "Active"
   },
   {
@@ -241,9 +241,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Graduate",
     membershipYear: 2025,
-    department: "B.Tech - ECE",
+    department: "B.Tech. - ECE",
     school: "School of Engineering",
-    course: "B.Tech - ECE",
+    course: "B.Tech. - ECE",
     status: "Active"
   },
   {
@@ -255,9 +255,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech - ECE",
+    department: "B.Tech. - ECE",
     school: "School of Engineering",
-    course: "B.Tech - ECE",
+    course: "B.Tech. - ECE",
     status: "Active"
   },
   {
@@ -283,9 +283,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech - IT",
+    department: "B.Tech. - IT",
     school: "School of Computer Science and Engineering",
-    course: "B.Tech - IT",
+    course: "B.Tech. - IT",
     status: "Active"
   },
   {
@@ -297,9 +297,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "BTech CSE CORE",
+    department: "B.Tech. CSE - Core",
     school: "School of Computer Science and Engineering",
-    course: "B.Tech.CSE - Core",
+    course: "B.Tech. CSE - Core",
     status: "Active"
   },
   {
@@ -311,9 +311,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B. Tech CSE Core",
+    department: "B.Tech. CSE - Core",
     school: "School of Computer Science and Engineering",
-    course: "B.Tech.CSE - Core",
+    course: "B.Tech. CSE - Core",
     status: "Active"
   },
   {
@@ -325,9 +325,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech - ECE",
+    department: "B.Tech. - ECE",
     school: "School of Engineering",
-    course: "B.Tech - ECE",
+    course: "B.Tech. - ECE",
     status: "Active"
   },
   {
@@ -339,9 +339,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Graduate",
     membershipYear: 2025,
-    department: "M.Tech.CSE - AIML",
+    department: "M.Tech. CSE - AIML",
     school: "School of Computer Science and Engineering",
-    course: "M.Tech.CSE - AIML",
+    course: "M.Tech. CSE - AIML",
     status: "Active"
   },
   {
@@ -353,9 +353,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech.CSE - Core",
+    department: "B.Tech. CSE - Core",
     school: "Computer Science and Engineering",
-    course: "B.Tech.CSE - Core",
+    course: "B.Tech. CSE - Core",
     status: "Active"
   },
   {
@@ -367,9 +367,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech .CSE",
+    department: "B.Tech. CSE",
     school: "School of Computer Science and Engineering",
-    course: "B.Tech.CSE - Core",
+    course: "B.Tech. CSE - Core",
     status: "Active"
   },
   {
@@ -381,9 +381,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech - ECE",
+    department: "B.Tech. - ECE",
     school: "School of Engineering",
-    course: "B.Tech - ECE",
+    course: "B.Tech. - ECE",
     status: "Active"
   },
   {
@@ -397,7 +397,7 @@ const dummyMembers = [
     membershipYear: 2025,
     department: "M.Tech. CSE - AIML",
     school: "School of Computer Science and Engineering",
-    course: "M.Tech.CSE - AIML",
+    course: "M.Tech. CSE - AIML",
     status: "Active"
   },
   {
@@ -409,9 +409,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech - ECE",
+    department: "B.Tech. - ECE",
     school: "School of Engineering",
-    course: "B.Tech - ECE",
+    course: "B.Tech. - ECE",
     status: "Active"
   }
 ].map(member => ({
