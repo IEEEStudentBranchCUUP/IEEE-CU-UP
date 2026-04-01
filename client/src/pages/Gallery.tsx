@@ -1,31 +1,12 @@
-import { useMemo, useState } from "react";
 import { Loader2 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
 import { GalleryCard } from "@/components/GalleryCard";
 import { useGallery } from "@/hooks/use-gallery";
-import type { GalleryItem } from "@/lib/types";
-
-type GalleryFilter = "all" | GalleryItem["category"];
-
-const filters: { label: string; value: GalleryFilter }[] = [
-  { label: "All", value: "all" },
-  { label: "Events", value: "event" },
-  { label: "Workshops", value: "workshop" },
-  { label: "Seminars", value: "seminar" },
-  { label: "Activities", value: "activity" },
-];
 
 export default function Gallery() {
   const { data: galleryItems, isLoading, error } = useGallery();
-  const [filter, setFilter] = useState<GalleryFilter>("all");
-
-  const filteredItems = useMemo(() => {
-    if (!galleryItems) return [];
-    if (filter === "all") return galleryItems;
-    return galleryItems.filter((item) => item.category === filter);
-  }, [galleryItems, filter]);
+  const featuredItem = galleryItems?.[0];
 
   return (
     <div className="min-h-screen font-sans flex flex-col">
@@ -34,30 +15,12 @@ export default function Gallery() {
       <main className="flex-grow bg-slate-50/50">
         <section className="border-b border-slate-200 bg-white py-16">
           <div className="container-custom">
-            <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <div>
                 <h1 className="font-heading text-4xl font-bold text-foreground">Gallery</h1>
                 <p className="mt-2 text-muted-foreground">
-                  IEEE Student Branch moments from events, workshops, seminars, and campus activities.
+                  IEEE CU-UP Student Branch moments from the inauguration and upcoming photo stories.
                 </p>
-              </div>
-
-              <div className="flex flex-wrap gap-2 rounded-lg bg-slate-100 p-1">
-                {filters.map((item) => (
-                  <Button
-                    key={item.value}
-                    size="sm"
-                    variant={filter === item.value ? "default" : "ghost"}
-                    className={
-                      filter === item.value
-                        ? "bg-white text-primary shadow-sm hover:bg-white"
-                        : "text-muted-foreground hover:text-foreground"
-                    }
-                    onClick={() => setFilter(item.value)}
-                  >
-                    {item.label}
-                  </Button>
-                ))}
               </div>
             </div>
           </div>
@@ -72,15 +35,26 @@ export default function Gallery() {
             <div className="py-20 text-center text-destructive">
               Failed to load gallery items. Please try again later.
             </div>
-          ) : filteredItems.length === 0 ? (
+          ) : !featuredItem ? (
             <div className="py-20 text-center text-muted-foreground">
-              No gallery items found in this category.
+              No gallery items found yet.
             </div>
           ) : (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredItems.map((item) => (
-                <GalleryCard key={item.id} item={item} />
-              ))}
+            <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
+              <GalleryCard item={featuredItem} />
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <p className="text-sm font-semibold uppercase tracking-wide text-primary">Featured event</p>
+                <h2 className="mt-3 text-2xl font-bold text-foreground">IEEE CU-UP SB Inauguration</h2>
+                <p className="mt-4 text-sm leading-7 text-muted-foreground">
+                  This is the first real gallery entry. The card is live now, and the detailed event page is ready for the
+                  final inauguration photos when you share them.
+                </p>
+
+                <div className="mt-6 rounded-xl bg-slate-50 p-4 text-sm text-slate-600">
+                  Click the card to open the inauguration album page and continue the photo rollout later.
+                </div>
+              </div>
             </div>
           )}
         </section>

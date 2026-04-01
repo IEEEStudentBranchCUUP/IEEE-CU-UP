@@ -13,10 +13,7 @@ import Members from "@/pages/MemberCard";
 import Register from "@/pages/register";
 import Guidelines from "@/pages/guide";
 import Gallery from "@/pages/Gallery";
-
-/* ================= POPUP IMPORTS (DELETE AFTER INAUGURATION) ================= */
-import { useState, useEffect } from "react";
-/* ============================================================================ */
+import GalleryDetail from "@/pages/GalleryDetail";
 
 function Router() {
   return (
@@ -24,6 +21,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/events" component={Events} />
+      <Route path="/gallery/:slug" component={GalleryDetail} />
       <Route path="/gallery" component={Gallery} />
       <Route path="/members" component={Members} />
       <Route path="/team" component={Team} />
@@ -36,14 +34,6 @@ function Router() {
 }
 
 function App() {
-  /* ================= POPUP STATE (DELETE AFTER INAUGURATION) ================= */
-  const [showPopup, setShowPopup] = useState(false);
-
-  useEffect(() => {
-    setShowPopup(true);
-  }, []);
-  /* ============================================================================ */
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -55,39 +45,3 @@ function App() {
 }
 
 export default App;
-
-/* ================= POPUP STYLES (DELETE AFTER INAUGURATION) ================= */
-
-const overlayStyle: React.CSSProperties = {
-  position: "fixed",
-  top: 0,
-  left: 0,
-  width: "100vw",
-  height: "100vh",
-  backgroundColor: "rgba(0,0,0,0.7)",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  zIndex: 9999,
-};
-
-const imageContainer: React.CSSProperties = {
-  position: "relative",
-  width: "90%",
-  maxWidth: "500px",
-};
-
-const closeBtn: React.CSSProperties = {
-  position: "absolute",
-  top: "10px",
-  right: "10px",
-  background: "white",
-  border: "none",
-  borderRadius: "50%",
-  width: "30px",
-  height: "30px",
-  cursor: "pointer",
-  fontWeight: "bold",
-};
-
-/* ============================================================================ */

@@ -8,6 +8,12 @@ export interface Event {
   imageUrl?: string;
 }
 
+export interface GalleryPhoto {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
 export interface TeamMember {
   id: number;
   name: string;
@@ -24,9 +30,12 @@ export interface TeamMember {
 
 export interface GalleryItem {
   id: number;
+  slug?: string;
   title: string;
   description: string;
   date: string;
   category: "event" | "workshop" | "seminar" | "activity";
   imageUrl: string;
+  location?: string;
+  photos?: GalleryPhoto[];
 }

@@ -67,7 +67,13 @@ export function Navbar() {
                   href={item.href}
                   className={cn(
                     "px-3 py-2 text-sm font-medium transition-colors hover:text-primary whitespace-nowrap",
-                    location === item.href ? "text-primary font-semibold" : "text-muted-foreground"
+                    item.href === "/gallery"
+                      ? location.startsWith("/gallery")
+                        ? "text-primary font-semibold"
+                        : "text-muted-foreground"
+                      : location === item.href
+                        ? "text-primary font-semibold"
+                        : "text-muted-foreground"
                   )}
                 >
                   {item.label}
@@ -119,9 +125,13 @@ export function Navbar() {
                     href={item.href}
                     className={cn(
                       "py-3 text-base font-medium transition-colors border-b border-gray-100 last:border-0",
-                      location === item.href
-                        ? "text-primary"
-                        : "text-muted-foreground hover:text-primary"
+                      item.href === "/gallery"
+                        ? location.startsWith("/gallery")
+                          ? "text-primary"
+                          : "text-muted-foreground hover:text-primary"
+                        : location === item.href
+                          ? "text-primary"
+                          : "text-muted-foreground hover:text-primary"
                     )}
                     onClick={() => setIsMobileOpen(false)}
                   >
