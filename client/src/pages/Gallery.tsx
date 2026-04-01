@@ -6,7 +6,6 @@ import { useGallery } from "@/hooks/use-gallery";
 
 export default function Gallery() {
   const { data: galleryItems, isLoading, error } = useGallery();
-  const featuredItem = galleryItems?.[0];
 
   return (
     <div className="min-h-screen font-sans flex flex-col">
@@ -19,7 +18,7 @@ export default function Gallery() {
               <div>
                 <h1 className="font-heading text-4xl font-bold text-foreground">Gallery</h1>
                 <p className="mt-2 text-muted-foreground">
-                  IEEE CU-UP Student Branch moments from the inauguration and upcoming photo stories.
+                  IEEE CU-UP Student Branch moments from major events and upcoming photo stories.
                 </p>
               </div>
             </div>
@@ -35,26 +34,15 @@ export default function Gallery() {
             <div className="py-20 text-center text-destructive">
               Failed to load gallery items. Please try again later.
             </div>
-          ) : !featuredItem ? (
+          ) : !galleryItems || galleryItems.length === 0 ? (
             <div className="py-20 text-center text-muted-foreground">
               No gallery items found yet.
             </div>
           ) : (
-            <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
-              <GalleryCard item={featuredItem} />
-
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <p className="text-sm font-semibold uppercase tracking-wide text-primary">Featured event</p>
-                <h2 className="mt-3 text-2xl font-bold text-foreground">IEEE CU-UP SB Inauguration</h2>
-                <p className="mt-4 text-sm leading-7 text-muted-foreground">
-                  This is the first real gallery entry. The card is live now, and the detailed event page is ready for the
-                  final inauguration photos when you share them.
-                </p>
-
-                <div className="mt-6 rounded-xl bg-slate-50 p-4 text-sm text-slate-600">
-                  Click the card to open the inauguration album page and continue the photo rollout later.
-                </div>
-              </div>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {galleryItems.map((item) => (
+                <GalleryCard key={item.id} item={item} />
+              ))}
             </div>
           )}
         </section>

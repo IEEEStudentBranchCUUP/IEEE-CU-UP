@@ -50,6 +50,44 @@ export const galleryEvents: GalleryDetail[] = [
       },
     ],
   },
+  {
+    id: 2,
+    slug: "annual-grand-meeting-agm-2026",
+    title: "Annual Grand Meeting (AGM) 2026",
+    description:
+      "A major annual IEEE gathering attended by CU-UP Student Branch members to review milestones, align plans, and strengthen community collaboration.",
+    date: "2026-02-22T10:00:00Z",
+    category: "event",
+    imageUrl: "/images/team/event1.jpeg",
+    location: "Chandigarh University, Uttar Pradesh Campus",
+    highlights: [
+      "Annual branch-wide strategic review and planning.",
+      "Member networking and leadership interaction session.",
+      "Event gallery section prepared for AGM photo uploads.",
+    ],
+    photos: [
+      {
+        src: "/images/team/AGM1.jpeg",
+        alt: "Annual Grand Meeting 2026 photo 1",
+      },
+      {
+        src: "/images/team/AGM2.jpeg",
+        alt: "Annual Grand Meeting 2026 photo 2",
+      },
+      {
+        src: "/images/team/AGM3.jpeg",
+        alt: "Annual Grand Meeting 2026 photo 3",
+      },
+      {
+        src: "/images/team/AGM4.jpeg",
+        alt: "Annual Grand Meeting 2026 photo 4",
+      },
+      {
+        src: "/images/team/AGM5.jpeg",
+        alt: "Annual Grand Meeting 2026 photo 5",
+      },
+    ],
+  },
 ];
 
 export const galleryItems: GalleryItem[] = galleryEvents.map(({ highlights, ...item }) => item);

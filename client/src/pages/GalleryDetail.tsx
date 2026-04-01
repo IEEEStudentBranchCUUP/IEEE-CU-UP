@@ -6,12 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { getGalleryEvent } from "@/lib/gallery-data";
 
-const placeholderTiles = [
-  "Awaiting inauguration photo 01",
-  "Awaiting inauguration photo 02",
-  "Awaiting inauguration photo 03",
-  "Awaiting inauguration photo 04",
-];
+const placeholderTiles = [1, 2, 3, 4];
 
 export default function GalleryDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -26,7 +21,7 @@ export default function GalleryDetail() {
           <section className="container-custom py-20 text-center">
             <p className="text-sm font-semibold uppercase tracking-wide text-primary">Gallery</p>
             <h1 className="mt-3 text-3xl font-bold text-foreground">Event not found</h1>
-            <p className="mt-3 text-muted-foreground">The inauguration page is ready, but the requested album slug does not exist yet.</p>
+            <p className="mt-3 text-muted-foreground">The requested event album slug does not exist yet.</p>
             <Button asChild className="mt-6">
               <Link href="/gallery">
                 <ArrowLeft className="mr-2 h-4 w-4" />
@@ -46,7 +41,7 @@ export default function GalleryDetail() {
                     </Link>
                   </Button>
 
-                  <p className="text-sm font-semibold uppercase tracking-wide text-primary">Featured inauguration</p>
+                  <p className="text-sm font-semibold uppercase tracking-wide text-primary">Featured event</p>
                   <h1 className="mt-3 text-4xl font-bold text-foreground md:text-5xl">{event.title}</h1>
                   <p className="mt-5 max-w-2xl text-base leading-8 text-muted-foreground">{event.description}</p>
 
@@ -75,7 +70,7 @@ export default function GalleryDetail() {
                   <img src={event.imageUrl} alt={event.title} className="h-full w-full object-cover" />
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/75 to-transparent p-6 text-white">
                     <p className="text-sm font-semibold uppercase tracking-wide text-white/80">Album cover</p>
-                    <p className="mt-1 text-lg font-semibold">IEEE CU-UP SB Inauguration</p>
+                    <p className="mt-1 text-lg font-semibold">{event.title}</p>
                   </div>
                 </div>
               </div>
@@ -97,7 +92,7 @@ export default function GalleryDetail() {
                     <p className="text-sm font-semibold uppercase tracking-wide text-primary">Photo gallery</p>
                     <h2 className="mt-2 text-2xl font-bold text-foreground">Photos will be added here</h2>
                     <p className="mt-3 max-w-3xl text-sm leading-7 text-muted-foreground">
-                      The page structure is ready. Once you send the inauguration photos, they can be dropped into this section
+                      The page structure is ready. Once you send the event photos, they can be dropped into this section
                       without changing the route or card flow.
                     </p>
                   </div>
@@ -117,14 +112,14 @@ export default function GalleryDetail() {
                   </div>
                 ) : (
                   <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-                    {placeholderTiles.map((tile) => (
+                    {placeholderTiles.map((tileNumber) => (
                       <div
-                        key={tile}
+                        key={tileNumber}
                         className="flex h-56 items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 text-center text-sm text-slate-500"
                       >
                         <div className="space-y-3 px-4">
                           <ImageOff className="mx-auto h-10 w-10 text-slate-400" />
-                          <p>{tile}</p>
+                          <p>{`Awaiting ${event.title} photo ${String(tileNumber).padStart(2, "0")}`}</p>
                         </div>
                       </div>
                     ))}
