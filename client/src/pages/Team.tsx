@@ -258,7 +258,7 @@ export default function Team() {
       department: "B.Tech. CSE - Core",
       email: "ayush.singh@culkomail.in",
       linkedin: "https://linkedin.com/in/ayush-singh",
-      imageUrl: "/images/team/media3.jpeg",
+      imageUrl: "/images/team/media3.jfif",
       category: "media",
       bio: "Editing quality content",
     },
