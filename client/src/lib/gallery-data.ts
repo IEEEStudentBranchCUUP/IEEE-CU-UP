@@ -58,7 +58,7 @@ export const galleryEvents: GalleryDetail[] = [
       "A major annual IEEE gathering attended by CU-UP Student Branch members to review milestones, align plans, and strengthen community collaboration.",
     date: "2026-02-01T10:00:00Z",
     category: "event",
-    imageUrl: "/images/team/event1.jpeg",
+    imageUrl: "/images/team/AGM4.jpeg",
     location: "Chandigarh University, Uttar Pradesh Campus",
     highlights: [
       "Annual branch-wide strategic review and planning.",
