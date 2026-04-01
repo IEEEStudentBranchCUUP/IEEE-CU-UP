@@ -329,7 +329,7 @@ export default function Team() {
       linkedin: "www.linkedin.com/in/kanika-singh-776ab0392",
       imageUrl: "/images/team/achor1.jpg",
       category: "anchor",
-      bio: "Leading anchoring team",
+      bio: "Leading anchoring team and Leading IEEE Student Branch",
     },
     {
       id: 39,
