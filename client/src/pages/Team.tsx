@@ -67,7 +67,7 @@ export default function Team() {
       linkedin: "www.linkedin.com/in/raaj-shekhar-65128b1a1",
       imageUrl: "/images/team/chairperson.png",
       category: "core",
-      bio: "Leading IEEE CU towards technological excellence with strategic vision and innovative leadership.",
+      bio: "Leading IEEE CU",
     },
     {
       id: 5,
@@ -78,7 +78,7 @@ export default function Team() {
       linkedin: "https://www.linkedin.com/in/-ayankhan",
       imageUrl: "/images/team/vice-chair.jpg",
       category: "core",
-      bio: "Driven by innovation and student-led initiatives, fostering a culture of technical excellence.",
+      bio: "Driving innovation forward",
     },
     {
       id: 6,
@@ -89,7 +89,7 @@ export default function Team() {
       linkedin: "https://www.linkedin.com/in/jayant-singh-ya",
       imageUrl: "/images/team/secretary.jpg",
       category: "core",
-      bio: "Team coordination and event management expert, ensuring smooth operations and effective communication.",
+      bio: "Ensuring smooth operations",
     },
     {
       id: 7,
@@ -100,7 +100,7 @@ export default function Team() {
       linkedin: "https://www.linkedin.com/in/suryansh549/",
       imageUrl: "/images/team/treasurer.png",
       category: "core",
-      bio: "Financial management and budgeting specialist, ensuring optimal resource allocation.",
+      bio: "Managing finances wisely",
     },
     
     // Technical Team
@@ -113,7 +113,7 @@ export default function Team() {
       linkedin: "https://www.linkedin.com/in/sarfaraj-salim-khan-8363b92ab/",
       imageUrl: "/images/team/tech-lead.jpg",
       category: "tech",
-      bio: "Tech Lead managing technical direction and team coordination with expertise in AI/ML.",
+      bio: "Leading technical innovation",
     },
     {
       id: 13,
@@ -124,7 +124,7 @@ export default function Team() {
       linkedin: "https://in.linkedin.com/in/mayank-kumar-mishra-411971290",
       imageUrl: "/images/team/mayank.png",
       category: "tech",
-      bio: "Providing strategic technical guidance and mentoring the tech team towards excellence.",
+      bio: "Providing technical guidance",
     },
     {
       id: 13,
@@ -135,7 +135,7 @@ export default function Team() {
       linkedin: "https://www.linkedin.com/in/shashank-pandey-067811392?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
       imageUrl: "/images/team/tech1.jpeg",
       category: "tech",
-      bio: "Associate Technical Lead managing development tasks and mentoring junior developers.",
+      bio: "Managing development tasks",
     },
     {
       id: 14,
@@ -146,7 +146,7 @@ export default function Team() {
       linkedin: "www.linkedin.com/in/akshara-bajpai-0a7559397",
       imageUrl: "/images/team/tech2.jpg",
       category: "tech",
-      bio: "Technical support assisting in development and contributing to innovative solutions.",
+      bio: "Supporting technical solutions",
     },
     {
       id: 15,
@@ -157,7 +157,7 @@ export default function Team() {
       linkedin: "https://www.linkedin.com/in/mayank-gautam-9140933aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       imageUrl: "/images/team/tech3.jpg",
       category: "tech",
-      bio: "Technical executive supporting development with strong problem-solving skills.",  
+      bio: "Strong problem-solving skills",  
     },
     {
       id: 16,
@@ -168,7 +168,7 @@ export default function Team() {
       linkedin: "www.linkedin.com/in/sampoorn-tripathi-38121b354",
       imageUrl: "/images/team/tech4.jpg",
       category: "tech", 
-      bio: "Technical team member contributing to system support and backend development.",   
+      bio: "Backend development expert",   
     },
     {
       id: 17,
@@ -179,10 +179,10 @@ export default function Team() {
       linkedin: "https://www.linkedin.com/in/deepanjali-srivastava-189b27372?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       imageUrl: "/images/team/deepanjali.png",
       category: "tech", 
-      bio: "Technical team member contributing to system support and backend development.",   
+      bio: "System support specialist",   
     },
     
-    // Marketing Team (NEW with bios)
+    // Marketing Team
     {
       id: 23,
       name: "Ishan Yadav",
@@ -192,7 +192,7 @@ export default function Team() {
       linkedin: "https://www.linkedin.com/in/ishan-yadav-49a4913ab?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
       imageUrl: "/images/team/marketing1.jpg",
       category: "marketing",
-      bio: "Leading marketing strategies and outreach initiatives to expand IEEE CU's presence and impact.",
+      bio: "Leading marketing strategies",
     },
     {
       id: 24,
@@ -203,7 +203,7 @@ export default function Team() {
       linkedin: "https://www.linkedin.com/in/aaradhyagupta21",
       imageUrl: "/images/team/marketing2.jpg",
       category: "marketing",
-      bio: "Driving brand awareness and community engagement through innovative marketing campaigns.",
+      bio: "Driving brand awareness",
     },
     {
       id: 25,
@@ -214,7 +214,7 @@ export default function Team() {
       linkedin: "https://linkedin.com/in/abhedya-singh",
       imageUrl: "/images/team/marketing3.jpg",
       category: "marketing",
-      bio: "Managing publicity and promotional activities to maximize event reach and participation.",
+      bio: "Managing event publicity",
     },
     {
       id: 26,
@@ -225,7 +225,7 @@ export default function Team() {
       linkedin: "https://www.linkedin.com/in/rohit-kumawat-7586a7394?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       imageUrl: "/images/team/marketing4.jpg",
       category: "marketing",
-      bio: "Focusing on membership growth and retention, building a strong IEEE community.",
+      bio: "Growing member community",
     },
     
     // Media Team
@@ -238,7 +238,7 @@ export default function Team() {
       linkedin: "https://linkedin.com/in/aadya-gupta",
       imageUrl: "/images/team/media-lead.jpg",
       category: "media",
-      bio: "Overseeing media operations and content strategy for IEEE CU's digital presence.",
+      bio: "Overseeing media operations",
     },
     {
       id: 28,
@@ -249,7 +249,7 @@ export default function Team() {
       linkedin: "https://linkedin.com/in/kushagra-srivastava",
       imageUrl: "/images/team/social-media.jpg",
       category: "media",
-      bio: "Managing social media platforms and creating engaging content for the community.",
+      bio: "Managing social platforms",
     },
     {
       id: 29,
@@ -260,7 +260,7 @@ export default function Team() {
       linkedin: "https://linkedin.com/in/abhinav-gupta",
       imageUrl: "/images/team/photographer.jpg",
       category: "media",
-      bio: "Capturing memorable moments and creating visual stories of IEEE events.",
+      bio: "Capturing special moments",
     },
     {
       id: 30,
@@ -271,7 +271,7 @@ export default function Team() {
       linkedin: "https://linkedin.com/in/ayush-singh",
       imageUrl: "/images/team/editor.jpg",
       category: "media",
-      bio: "Editing content and ensuring high-quality publications for IEEE CU.",
+      bio: "Editing quality content",
     },
     {
       id: 31,
@@ -282,7 +282,7 @@ export default function Team() {
       linkedin: "https://www.linkedin.com/in/naitiksrivastava25",
       imageUrl: "/images/team/design.jpg",
       category: "media",
-      bio: "Creating visually appealing designs and graphics for marketing and events.",
+      bio: "Creating visual designs",
     },
     
     // Events Team
@@ -295,7 +295,7 @@ export default function Team() {
       linkedin: "https://linkedin.com/in/mohd-humza",
       imageUrl: "/images/team/event-lead.jpg",
       category: "events",
-      bio: "Leading event planning and execution to deliver exceptional experiences.",
+      bio: "Leading event planning",
     },
     {
       id: 34,
@@ -306,7 +306,7 @@ export default function Team() {
       linkedin: "https://linkedin.com/in/animesh-mishra",
       imageUrl: "/images/team/event2.jpg",
       category: "events",
-      bio: "Supporting event logistics and coordination for successful program delivery.",
+      bio: "Supporting event logistics",
     },
     {
       id: 35,
@@ -317,7 +317,7 @@ export default function Team() {
       linkedin: "https://linkedin.com/in/abhedya-singh",
       imageUrl: "/images/team/event3.jpg",
       category: "events",
-      bio: "Contributing to event management and participant engagement strategies.",
+      bio: "Managing event engagement",
     },
     {
       id: 36,
@@ -328,7 +328,7 @@ export default function Team() {
       linkedin: "https://www.linkedin.com/in/ansh-pratap-verma-00aab0337?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       imageUrl: "/images/team/event4.jpg",
       category: "events",
-      bio: "Assisting in event operations and ensuring smooth execution of activities.",
+      bio: "Ensuring smooth execution",
     },
     {
       id: 37,
@@ -338,7 +338,7 @@ export default function Team() {
       email: "anubhav.singh@culkomail.in",
       imageUrl: "/images/team/event5.jpg",
       category: "events",
-      bio: "Supporting event coordination and volunteer management.",
+      bio: "Coordinating event activities",
     },
     
     // Anchoring Team
@@ -349,9 +349,9 @@ export default function Team() {
       department: "B.Tech. CSE - Core",
       email: "kanika.singh@culkomail.in",
       linkedin: "www.linkedin.com/in/kanika-singh-776ab0392",
-      imageUrl: "/images/team/anchor-lead.jpg",
+      imageUrl: "/images/team/achor1.jpg",
       category: "anchor",
-      bio: "Leading the anchoring team and representing IEEE CU as spokesperson.",
+      bio: "Leading anchoring team",
     },
     {
       id: 39,
@@ -360,9 +360,9 @@ export default function Team() {
       department: "B.Tech. ECE",
       email: "pulkit.shukla@culkomail.in",
       linkedin: "https://www.linkedin.com/in/pulkit-shukla-b153693a7?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-      imageUrl: "/images/team/anchor1.jpg",
+      imageUrl: "/images/team/achor2.jpg",
       category: "anchor",
-      bio: "Bringing energy and charisma to IEEE events as a skilled anchor.",
+      bio: "Bringing event energy",
     },
     {
       id: 40,
@@ -371,9 +371,9 @@ export default function Team() {
       department: "",
       email: "ridham.taygi@culkomail.in",
       linkedin: "https://linkedin.com/in/ridham-taygi",
-      imageUrl: "/images/team/anchor2.jpg",
+      imageUrl: "/images/team/achor3.jpg",
       category: "anchor",
-      bio: "Engaging audiences with professional hosting and communication skills.",
+      bio: "Engaging audiences professionally",
     },
   ];
 
