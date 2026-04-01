@@ -23,7 +23,32 @@ export const galleryEvents: GalleryDetail[] = [
       "Introduction of the student branch vision, goals, and leadership team.",
       "Networking and group moments from the inauguration ceremony.",
     ],
-    photos: [],
+    photos: [
+      {
+        src: "/images/team/inauguration1.jpeg",
+        alt: "IEEE CU-UP SB inauguration gathering moment 1",
+      },
+      {
+        src: "/images/team/inauguration2.jpeg",
+        alt: "IEEE CU-UP SB inauguration gathering moment 2",
+      },
+      {
+        src: "/images/team/inauguration3.jpeg",
+        alt: "IEEE CU-UP SB inauguration gathering moment 3",
+      },
+      {
+        src: "/images/team/inauguration4.jpeg",
+        alt: "IEEE CU-UP SB inauguration gathering moment 4",
+      },
+      {
+        src: "/images/team/inauguration5.jpeg",
+        alt: "IEEE CU-UP SB inauguration gathering moment 5",
+      },
+      {
+        src: "/images/inauguration6.jpeg",
+        alt: "IEEE CU-UP SB inauguration gathering moment 6",
+      },
+    ],
   },
 ];
 
