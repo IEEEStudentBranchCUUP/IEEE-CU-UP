@@ -364,6 +364,17 @@ export default function Team() {
       category: "anchor",
       bio: "Overseeing media operations",
     },
+    {
+      id: 39,
+      name: "Pulkit Shukla",
+      role: "Anchor",
+      department: "B.Tech. ECE",
+      email: "pulkit.shukla@culkomail.in",
+      linkedin: "https://www.linkedin.com/in/pulkit-shukla-b153693a7?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      imageUrl: "/images/team/achor3.jpg",
+      category: "anchor",
+      bio: "Bringing energy and charisma to IEEE events as a skilled anchor.",
+    },
   ];
 
   // Filter members by category
