@@ -31,9 +31,9 @@ const dummyMembers = [
     state: "Punjab",
     membershipType: "Student",
     membershipYear: 2025,
-    department: "B.Tech CSE Core",
+    department: "B.Tech.CSE - Core",
     school: "School of engineering",
-    course: "B.Tech CSE Core",
+    course: "B.Tech.CSE - Core",
     status: "Active"
   },
   {
