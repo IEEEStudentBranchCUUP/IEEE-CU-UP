@@ -46,7 +46,7 @@ export default function Team() {
       category: "faculty",
     },
      {
-      id: 4,
+      id: 1,
       name: "Dr. Neelesh Gupta",
       role: "Faculty Advisor",
       department: "School of Engineering",
@@ -229,7 +229,7 @@ export default function Team() {
     },
     
     // Media Team
-        {
+    {
       id: 27,
       name: "Aadya Gupta",
       role: "Media Lead",
