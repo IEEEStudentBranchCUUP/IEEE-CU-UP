@@ -26,20 +26,12 @@ export default function Team() {
   const members: TeamMember[] = [
     // Faculty Advisors
     {
-      id: 1,
-      name: "Dr. Ajay Kumar Singh",
-      role: "HOD",
-      department: "School of Computer Science and Engineering",
-      email: "rkumar@ieee-cu.edu",
-      imageUrl: "/images/team/sir1.jpeg",
-      category: "faculty",
-    },
-    {
       id: 2,
       name: "Dr. Vikash Kumar Mishra",
       role: "Branch Counsellor, IEEE Student Branch ",
       department: "School of Computer Science and Engineering",
       email: "priya.sharma@ieee-cu.edu",
+      linkedin: "https://linkedin.com/in/vikash-mishra",
       imageUrl: "/images/team/sir3.png",
       category: "faculty",
     },
@@ -49,7 +41,18 @@ export default function Team() {
       role: "Faculty Advisor",
       department: "School of Computer Science and Engineering",
       email: "priya.sharma@ieee-cu.edu",
+      linkedin: "https://linkedin.com/in/amit-mishra",
       imageUrl: "/images/team/sir2.png",
+      category: "faculty",
+    },
+     {
+      id: 4,
+      name: "Dr. Neelesh Gupta",
+      role: "Faculty Advisor",
+      department: "School of Engineering",
+      email: "rkumar@ieee-cu.edu",
+      linkedin: "https://www.linkedin.com/in/dr-neelesh-gupta-88028425/",
+      imageUrl: "/images/team/sir4.jpg",
       category: "faculty",
     },
     
