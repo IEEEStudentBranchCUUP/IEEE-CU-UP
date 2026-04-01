@@ -229,6 +229,17 @@ export default function Team() {
     },
     
     // Media Team
+        {
+      id: 27,
+      name: "Aadya Gupta",
+      role: "Media Lead",
+      department: "B.Tech. CSE - Core",
+      email: "aadya.gupta@culkomail.in",
+      linkedin: "https://linkedin.com/in/aadya-gupta",
+      imageUrl: "/images/team/achor2.jpg",
+      category: "media",
+      bio: "Overseeing media operations",
+    },
     {
       id: 29,
       name: "Abhinav Gupta",
@@ -319,17 +330,6 @@ export default function Team() {
       imageUrl: "/images/team/achor1.jpg",
       category: "anchor",
       bio: "Leading anchoring team",
-    },
-    {
-      id: 27,
-      name: "Aadya Gupta",
-      role: "Anchor",
-      department: "B.Tech. CSE - Core",
-      email: "aadya.gupta@culkomail.in",
-      linkedin: "https://linkedin.com/in/aadya-gupta",
-      imageUrl: "/images/team/achor2.jpg",
-      category: "anchor",
-      bio: "Overseeing media operations",
     },
     {
       id: 39,
