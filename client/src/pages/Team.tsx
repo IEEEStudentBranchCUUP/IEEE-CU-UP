@@ -277,12 +277,12 @@ export default function Team() {
     // Events Team
     {
       id: 32,
-      name: "Mohd. Humza",
+      name: "Mohd Humza",
       role: "Event Lead",
       department: "B.Tech. CSE - Core",
       email: "mohd.humza@culkomail.in",
       linkedin: "https://linkedin.com/in/mohd-humza",
-      imageUrl: "/images/team/event-lead.jpg",
+      imageUrl: "/images/team/event1.jpg",
       category: "events",
       bio: "Leading event planning",
     },
