@@ -244,7 +244,7 @@ export default function Team() {
       id: 29,
       name: "Abhinav Gupta",
       role: "Photographer",
-      department: "",
+      department: "B.Tech. CSE - Core",
       email: "abhinav.gupta@culkomail.in",
       linkedin: "https://linkedin.com/in/abhinav-gupta",
       imageUrl: "/images/team/media2.jpeg",
