@@ -14,7 +14,7 @@ export const galleryEvents: GalleryDetail[] = [
     title: "IEEE CU-UP SB Inauguration",
     description:
       "The first official IEEE CU-UP Student Branch inauguration, introducing the chapter vision, team, and the roadmap for the year ahead.",
-    date: "2026-01-18T10:00:00Z",
+    date: "2026-02-12T10:00:00Z",
     category: "event",
     imageUrl: "/images/team/ieeebanner12feb.jpeg",
     location: "Chandigarh University, Uttar Pradesh Campus",
@@ -56,7 +56,7 @@ export const galleryEvents: GalleryDetail[] = [
     title: "Annual Grand Meeting (AGM) 2026",
     description:
       "A major annual IEEE gathering attended by CU-UP Student Branch members to review milestones, align plans, and strengthen community collaboration.",
-    date: "2026-02-22T10:00:00Z",
+    date: "2026-02-01T10:00:00Z",
     category: "event",
     imageUrl: "/images/team/event1.jpeg",
     location: "Chandigarh University, Uttar Pradesh Campus",
