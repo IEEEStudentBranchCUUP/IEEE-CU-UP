@@ -76,13 +76,11 @@ export function Footer() {
 
         <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} IEEE Chandigarh University Student Branch. All rights reserved.
+            © {new Date().getFullYear()} IEEE Chandigarh University Uttar Pradesh Student Branch. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <a href="#" className="text-slate-400 hover:text-primary transition-colors"><Linkedin className="w-5 h-5" /></a>
-            <a href="#" className="text-slate-400 hover:text-primary transition-colors"><Twitter className="w-5 h-5" /></a>
-            <a href="#" className="text-slate-400 hover:text-primary transition-colors"><Facebook className="w-5 h-5" /></a>
-            <a href="#" className="text-slate-400 hover:text-primary transition-colors"><Instagram className="w-5 h-5" /></a>
+            <a href="https://www.linkedin.com/in/ieeesbcuup?utm_source=share_via&utm_content=profile&utm_medium=member_android" className="text-slate-400 hover:text-primary transition-colors"><Linkedin className="w-5 h-5" /></a>
+            <a href="https://www.instagram.com/ieee.cuup?igsh=MWhqcnJyM2s4bTZxeg==" className="text-slate-400 hover:text-primary transition-colors"><Instagram className="w-5 h-5" /></a>
           </div>
         </div>
       </div>
