@@ -364,17 +364,6 @@ export default function Team() {
       category: "anchor",
       bio: "Bringing event energy",
     },
-    {
-      id: 40,
-      name: "Ridham Taygi",
-      role: "Anchor",
-      department: "",
-      email: "ridham.taygi@culkomail.in",
-      linkedin: "https://linkedin.com/in/ridham-taygi",
-      imageUrl: "/images/team/achor3.jpg",
-      category: "anchor",
-      bio: "Engaging audiences professionally",
-    },
   ];
 
   // Filter members by category
