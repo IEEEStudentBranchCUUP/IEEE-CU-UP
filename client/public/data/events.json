@@ -1,38 +1,38 @@
 [
   {
     "id": 1,
-    "title": "AI & Machine Learning Workshop",
-    "description": "Hands-on workshop covering fundamentals of AI/ML, model training, and real-world applications. Perfect for students eager to dive into artificial intelligence.",
-    "date": "2026-05-10T09:00:00Z",
-    "type": "upcoming",
-    "location": "Chandigarh University (UP Campus)",
+    "title": "IEEE Annual Meet",
+    "description": "Hands-on with IEEE Vtools and discussion about the annual budget and prize distribution to the achievers",
+    "date": "2026-02-01T09:00:00Z",
+    "type": "past",
+    "location": " Hotel DNG Grand, Kanpur",
     "imageUrl": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format"
   },
   {
     "id": 2,
-    "title": "Web Development Bootcamp",
-    "description": "Intensive bootcamp covering modern web technologies including HTML, CSS, JavaScript, and frameworks. Build real-world projects.",
-    "date": "2026-05-18T09:00:00Z",
-    "type": "upcoming",
+    "title": "IEEE Student Branch Launch",
+    "description": "The much awaited event of the laucnh of Student Branch of IEEE at the Chandigarh University Uttar Pradesh branch.",
+    "date": "2026-02-23T09:00:00Z",
+    "type": "past",
     "location": "Chandigarh University (UP Campus)",
     "imageUrl": "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&auto=format"
   },
   {
     "id": 3,
-    "title": "IoT & Embedded Systems Seminar",
-    "description": "Explore the world of Internet of Things and embedded systems. Learn about sensors, microcontrollers, and smart device integration.",
-    "date": "2026-05-25T09:00:00Z",
+    "title": "Expert Talk",
+    "description": "Explore the benifits of the IEEE Membership",
+    "date": "2026-04-02T09:00:00Z",
     "type": "upcoming",
     "location": "Chandigarh University (UP Campus)",
     "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format"
   },
   {
     "id": 4,
-    "title": "Cybersecurity Awareness Webinar",
-    "description": "Online webinar focused on cybersecurity best practices, threat prevention, and career opportunities in information security.",
-    "date": "2024-06-05T09:00:00Z",
-    "type": "past",
-    "location": "Online Webinar",
+    "title": "CIS Chapter ",
+    "description": "COMING SOON",
+    "date": "2026-05-05T09:00:00Z",
+    "type": "upcoming",
+    "location": "CU-UP Campus",
     "imageUrl": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format"
   },
   {
