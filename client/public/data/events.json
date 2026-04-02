@@ -33,7 +33,7 @@
     "date": "2026-05-10T09:00:00Z",
     "type": "upcoming",
     "location": "CU-UP Campus",
-    "imageUrl": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format"
+    "imageUrl": "./images/team/cis.jpeg"
   },
   {
     "id": 5,
