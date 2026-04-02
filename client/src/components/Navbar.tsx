@@ -29,14 +29,14 @@ export function Navbar() {
         <Link href="/" className="flex items-center">
           <div className="flex items-center">
             <img 
-              src="./images/team/CU_Logo.png" 
+              src="/images/team/CU_Logo.png" 
               alt="CU Logo" 
-              className="h-12 w-auto md:h-16" 
+              className="h-14 w-auto shrink-0 md:h-[4.5rem]" 
             />
             <img 
               src="https://pub-141831e61e69445289222976a15b6fb3.r2.dev/Image_to_url_V2/IEEE-CU-Logo-Official-imagetourl.cloud-1768544558737-myd2ju.jpg" 
               alt="IEEE Logo" 
-              class="h-12 w-auto md:h-16 ml-1 md:ml-2"
+              className="h-12 w-auto md:h-16 ml-1 md:ml-2"
             />
           </div>
         </Link>

@@ -88,6 +88,23 @@ export const galleryEvents: GalleryDetail[] = [
       },
     ],
   },
+  {
+    id: 3,
+    slug: "expert-talk",
+    title: "Expert talk",
+    description:
+      "An expert session for IEEE CU-UP members focused on practical insights, career guidance, and emerging technology discussions.",
+    date: "2026-02-20T10:00:00Z",
+    category: "event",
+    imageUrl: "/images/team/experttalkbanner.jpeg",
+    location: "Chandigarh University, Uttar Pradesh Campus",
+    highlights: [
+      "Industry-focused expert session with actionable takeaways.",
+      "Interactive discussion on current technology trends.",
+      "Dedicated gallery section prepared for upcoming event photos.",
+    ],
+    photos: [],
+  },
 ];
 
 export const galleryItems: GalleryItem[] = galleryEvents.map(({ highlights, ...item }) => item);
