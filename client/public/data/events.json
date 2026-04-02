@@ -10,9 +10,9 @@
   },
   {
     "id": 2,
-    "title": "IEEE Student Branch Launch",
+    "title": "IEEE Student Branch Inaugration",
     "description": "The much awaited event of the laucnh of Student Branch of IEEE at the Chandigarh University Uttar Pradesh branch.",
-    "date": "2026-02-23T09:00:00Z",
+    "date": "2026-02-12T09:00:00Z",
     "type": "past",
     "location": "Chandigarh University (UP Campus)",
     "imageUrl": "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&auto=format"
@@ -30,7 +30,7 @@
     "id": 4,
     "title": "CIS Chapter ",
     "description": "COMING SOON",
-    "date": "2026-05-05T09:00:00Z",
+    "date": "2026-05-10T09:00:00Z",
     "type": "upcoming",
     "location": "CU-UP Campus",
     "imageUrl": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format"
