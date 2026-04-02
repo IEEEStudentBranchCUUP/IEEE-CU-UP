@@ -6,7 +6,7 @@
     "date": "2026-02-01T09:00:00Z",
     "type": "past",
     "location": " Hotel DNG Grand, Kanpur",
-    "imageUrl": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format"
+    "imageUrl": "./images/team/annualmeet.jpeg"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "date": "2026-02-12T09:00:00Z",
     "type": "past",
     "location": "Chandigarh University (UP Campus)",
-    "imageUrl": "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&auto=format"
+    "imageUrl": "./images/team/inaugration.jpeg"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "date": "2026-04-02T09:00:00Z",
     "type": "upcoming",
     "location": "Chandigarh University (UP Campus)",
-    "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format"
+    "imageUrl": "./images/team/expert talk.jpeg"
   },
   {
     "id": 4,
