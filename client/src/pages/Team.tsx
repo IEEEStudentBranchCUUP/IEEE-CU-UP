@@ -206,17 +206,6 @@ export default function Team() {
       bio: "Driving brand awareness",
     },
     {
-      id: 25,
-      name: "Abhedya Pratap Singh",
-      role: "Publicity",
-      department: "B.Tech. ECE",
-      email: "abhedya.singh@culkomail.in",
-      linkedin: "https://linkedin.com/in/abhedya-singh",
-      imageUrl: "/images/team/marketing3.jpg",
-      category: "marketing",
-      bio: "Managing event publicity",
-    },
-    {
       id: 26,
       name: "Rohit Kumawat",
       role: "Membership",
