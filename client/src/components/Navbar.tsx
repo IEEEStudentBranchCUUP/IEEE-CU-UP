@@ -29,7 +29,7 @@ export function Navbar() {
         <Link href="/" className="flex items-center">
           <div className="flex items-center">
             <img 
-              src="/images/team/CU_Logo.png" 
+              src="./images/team/CU_Logo.png" 
               alt="CU Logo" 
               className="h-12 w-auto md:h-16" 
             />
